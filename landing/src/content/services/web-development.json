@@ -1,0 +1,31 @@
+{
+  "title": "Web Development",
+  "shortTitle": "Websites & design",
+  "order": 1,
+  "description": "A strong first impression. Thoughtful design and responsive websites that make your business easy to find, understand, and connect with.",
+  "intro": "Your website should work as hard as you do. We build modern, responsive websites around your business, your audience, and what comes next.",
+  "image": "/images/web-design.webp",
+  "imageAlt": "Website design imagery from Adot Technologies",
+  "icon": "globe",
+  "features": [
+    "Responsive design",
+    "SEO optimization",
+    "Fast load times",
+    "Secure infrastructure"
+  ],
+  "process": [
+    {
+      "title": "Discovery & planning",
+      "description": "Understand your business, goals, and audience."
+    },
+    {
+      "title": "Design & development",
+      "description": "Create a website that brings your business and its purpose into focus."
+    },
+    {
+      "title": "Launch & maintenance",
+      "description": "Prepare for launch and support your website as it grows."
+    }
+  ],
+  "source": "https://www.adotsystems.tech/services/web-development"
+}

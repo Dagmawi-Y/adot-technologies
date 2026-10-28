@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+import Brand from './Brand.astro';
+import { site } from '@/data/site';
+const path = Astro.url.pathname;
+const links = [{ label: 'Our company', href: '/about/' }, { label: 'Our work', href: '/projects/' }, { label: 'Blog', href: '/blog/' }, { label: 'Contact', href: '/contact/' }];
+const services = ['Web Development', 'Web Design', 'App Development', 'Custom Software'];
+const active = (href: string) => path.startsWith(href) ? 'page' : undefined;
+---
+<header class="header-wrap site-container">
+  <div class="navigation-bar flex items-center justify-between gap-6">
+    <Brand />
+    <nav aria-label="Main navigation" class="desktop-nav flex items-center gap-7">
+      <details class="nav-dropdown"><summary data-active={path.startsWith('/services/')} >Services<Icon name="chevron" size={12} /></summary><div class="dropdown-panel"><a href="/services/" aria-current={path === '/services/' ? 'page' : undefined}>Explore our services</a>{services.map(label => <a href={`/services/${label.toLowerCase().replaceAll(' ', '-')}/`}>{label}</a>)}</div></details>
+      {links.map(link => <a href={link.href} aria-current={active(link.href)}>{link.label}</a>)}
+    </nav>
+    <div class="flex items-center gap-2"><a class="call-button" href={`tel:${site.phoneHref}`} aria-label="Call Adot Technologies"><Icon name="call" size={17} /></a><a class="nav-quote" href="/contact/">Start a project</a><button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-menu><Icon name="menu" /></button></div>
+  </div>
+  <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile navigation" hidden>
+    <a href="/services/">Services<Icon name="arrow" size={16} /></a>{links.map(link => <a href={link.href} aria-current={active(link.href)}>{link.label}<Icon name="arrow" size={16} /></a>)}
+  </nav>
+  <noscript><nav class="noscript-nav" aria-label="Navigation without JavaScript"><a href="/services/">Services</a>{links.map(link => <a href={link.href}>{link.label}</a>)}</nav></noscript>
+</header>

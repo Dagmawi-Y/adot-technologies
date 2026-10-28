@@ -1,0 +1,8 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import PageIntro from '@/components/site/PageIntro.astro';
+import ProjectCard from '@/components/site/ProjectCard.astro';
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+<Layout title="Our work" description="Explore websites and software from Adot Technologies, including Faith Import & Trade, WTB Import and Export, and Adot ERP."><PageIntro title="Good ideas. Made real." description="A selection of the websites and software in our portfolio. Different businesses, different challenges, the same care for the work." /><section class="site-container"><div class="project-grid grid gap-6 md:grid-cols-3">{projects.map(project => <ProjectCard project={project} />)}</div></section></Layout>

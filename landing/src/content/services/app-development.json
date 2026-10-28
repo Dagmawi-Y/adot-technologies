@@ -1,0 +1,31 @@
+{
+  "title": "App Development",
+  "shortTitle": "Mobile applications",
+  "order": 2,
+  "description": "Your idea, in people\u2019s hands. User-friendly mobile applications that connect your business to the people who need it.",
+  "intro": "Bring your app idea to life. We design and develop mobile applications for Android and iOS, with your users at the heart of the experience.",
+  "image": "/images/mobile.webp",
+  "imageAlt": "Mobile app development imagery from Adot Technologies",
+  "icon": "phone",
+  "features": [
+    "Android and iOS applications",
+    "User-centered interfaces",
+    "Performance optimization",
+    "Ongoing maintenance"
+  ],
+  "process": [
+    {
+      "title": "Explore the idea",
+      "description": "Understand your vision, audience, and the problems your app will solve."
+    },
+    {
+      "title": "Design & build",
+      "description": "Shape the user experience and develop the application."
+    },
+    {
+      "title": "Test & launch",
+      "description": "Test the experience, prepare for release, and plan ongoing support."
+    }
+  ],
+  "source": "https://www.adotsystems.tech/services/app-development"
+}

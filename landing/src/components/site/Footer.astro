@@ -1,0 +1,14 @@
+---
+import LinkButton from './LinkButton.astro';
+import Brand from './Brand.astro';
+import { site } from '@/data/site';
+---
+<footer class="site-container footer" id="get-in-touch">
+  <div class="footer-top grid gap-10 md:grid-cols-[2fr_1fr_1fr]">
+    <div><h2 class="whitespace-pre-line">Ready to build<br />something better?</h2><p>Let’s talk about your next project.</p><LinkButton href="/contact/" variant="white">Start a conversation</LinkButton></div>
+    <div><h3>Get in touch</h3><a href={`tel:${site.phoneHref}`}>{site.phone}</a><a href={`mailto:${site.email}`}>{site.email}</a><p>{site.address}</p></div>
+    <div><h3>Take a look around</h3><a href="/services/">Our services</a><a href="/about/">Our company</a><a href="/projects/">Our work</a><a href={site.products}>Our products</a><a href={site.labs}>Adot Labs</a><a href="/blog/">Blog</a></div>
+  </div>
+  <div class="footer-wordmark" aria-hidden="true"><div class="footer-marquee-track">{[1, 2].map(() => <div class="footer-marquee-group"><bdi>Powering Bold Dreams.</bdi><span class="footer-marquee-separator">✳</span></div>)}</div></div>
+  <div class="footer-bottom flex flex-wrap items-center justify-between gap-4"><p>© {new Date().getUTCFullYear()} Adot Technologies. All rights reserved.</p><div class="flex gap-5"><a href="/contact/#privacy">Privacy notice</a><a href={site.terms}>Terms</a><Brand footer /></div></div>
+</footer>

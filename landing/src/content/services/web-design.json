@@ -1,0 +1,31 @@
+{
+  "title": "Web Design",
+  "shortTitle": "Web design",
+  "order": 4,
+  "description": "Design with a purpose. Clear, considered interfaces that make your brand feel like you and give visitors a natural next step.",
+  "intro": "Make every interaction feel considered. We design websites that bring together your identity, clear navigation, and an experience built for your audience.",
+  "image": "/images/web-design.webp",
+  "imageAlt": "Creative website design imagery from Adot Technologies",
+  "icon": "pen",
+  "features": [
+    "Custom visual design",
+    "Responsive layouts",
+    "User-friendly navigation",
+    "SEO-friendly structure"
+  ],
+  "process": [
+    {
+      "title": "Understand your brand",
+      "description": "Learn about your business, your audience, and what makes you different."
+    },
+    {
+      "title": "Shape the experience",
+      "description": "Create layouts and a visual direction that serve your goals."
+    },
+    {
+      "title": "Refine the details",
+      "description": "Review the design together and prepare it for development."
+    }
+  ],
+  "source": "https://www.adotsystems.tech/services/web-design"
+}

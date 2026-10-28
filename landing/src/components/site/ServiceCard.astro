@@ -1,0 +1,9 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+interface Props { service: CollectionEntry<'services'>; fullTitle?: boolean; }
+const { service, fullTitle = false } = Astro.props;
+const { data, id } = service;
+const title = fullTitle ? data.title : data.shortTitle;
+---
+<article class="service-card" data-reveal><div class="service-default"><span class="service-icon"><Icon name={data.icon} size={24} /></span><h3>{title}</h3><p>{data.description}</p></div><div class="service-hover" aria-hidden="true"><span class="service-hover-title">{title}</span><p>{data.description}</p></div><a class="service-link" href={`/services/${id}/`}>Find out more<Icon name="arrow" size={15} /></a></article>

@@ -1,0 +1,13 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import PageIntro from '@/components/site/PageIntro.astro';
+import LinkButton from '@/components/site/LinkButton.astro';
+import ServiceCard from '@/components/site/ServiceCard.astro';
+import Icon from '@/components/site/Icon.astro';
+export async function getStaticPaths() { return (await getCollection('services')).map(service => ({ params: { id: service.id }, props: { service } })); }
+interface Props { service: CollectionEntry<'services'>; }
+const { service: { id, data } } = Astro.props;
+const others = (await getCollection('services')).filter(service => service.id !== id).sort((a, b) => a.data.order - b.data.order);
+---
+<Layout title={data.title} description={data.description} image={data.image}><PageIntro title={data.title} description={data.intro} backHref="/services/" backLabel="All services" /><div class="site-container detail-hero"><img src={data.image} alt={data.imageAlt} width="1200" height="800" fetchpriority="high" /><aside><h2>The right approach. Every detail.</h2><ul>{data.features.map(feature => <li><Icon name="check" size={18} />{feature}</li>)}</ul><LinkButton href={`/contact/?service=${id}`} variant="orange">Let’s talk about it</LinkButton></aside></div><section class="site-container section"><div class="section-heading"><h2>A clear path from idea to launch.</h2></div><div class="process-grid grid gap-6 md:grid-cols-3">{data.process.map((step, index) => <article data-reveal><span class="process-number">0{index + 1}</span><h3>{step.title}</h3><p>{step.description}</p></article>)}</div></section><section class="site-container section"><div class="section-heading heading-row"><div><h2>Something else in mind?</h2><p>Explore the other ways we can help.</p></div><LinkButton href="/services/">All services</LinkButton></div><div class="service-grid grid gap-5 md:grid-cols-3">{others.map(service => <ServiceCard service={service} fullTitle />)}</div></section></Layout>

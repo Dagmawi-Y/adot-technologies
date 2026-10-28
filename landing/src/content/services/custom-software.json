@@ -1,0 +1,31 @@
+{
+  "title": "Custom Software",
+  "shortTitle": "Custom software",
+  "order": 3,
+  "description": "Software that fits the way you work. Tailored systems to support your operations and solve the challenges that matter to your business.",
+  "intro": "Every business works differently. We create software around your specific requirements, from internal tools to systems that support your everyday operations.",
+  "image": "/images/software.webp",
+  "imageAlt": "Custom software development imagery from Adot Technologies",
+  "icon": "code",
+  "features": [
+    "Business-specific solutions",
+    "Scalable architecture",
+    "System integration",
+    "Ongoing support"
+  ],
+  "process": [
+    {
+      "title": "Understand the requirements",
+      "description": "Discuss your operations, needs, and challenges."
+    },
+    {
+      "title": "Develop & integrate",
+      "description": "Build a tailored solution and connect it with your workflow."
+    },
+    {
+      "title": "Test & support",
+      "description": "Test the system, prepare for deployment, and provide ongoing support."
+    }
+  ],
+  "source": "https://www.adotsystems.tech/services/custom-software"
+}

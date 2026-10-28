@@ -1,0 +1,7 @@
+---
+import { team } from '@/data/site';
+import LinkButton from './LinkButton.astro';
+interface Props { showLink?: boolean; }
+const { showLink = true } = Astro.props;
+---
+<section class="site-container section"><div class="section-heading heading-row" data-reveal><div><h2>Good people. Bold ideas.</h2><p>Meet the founders behind Adot Technologies.</p></div>{showLink && <LinkButton href="/about/" variant="dark">Meet Adot<span class="button-dot" aria-hidden="true">✳</span></LinkButton>}</div><div class="team-grid adot-team-grid grid grid-cols-2 gap-5">{team.map((person, index) => <article class={`team-card team-${index}`} data-reveal><div class="team-portrait"><img src={person.image} alt={person.name} width="800" height="800" loading="lazy" /></div><h3>{person.name}</h3><p>{person.role}</p></article>)}</div></section>

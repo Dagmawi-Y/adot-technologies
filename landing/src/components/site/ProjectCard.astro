@@ -1,0 +1,7 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Icon from './Icon.astro';
+interface Props { project: CollectionEntry<'projects'>; }
+const { project: { id, data } } = Astro.props;
+---
+<a class="project-card" href={`/projects/${id}/`} data-reveal><div class="project-image"><img src={data.image} alt={data.imageAlt} width="1200" height="900" loading="lazy" /><span class="round-arrow"><Icon /></span></div><div class="project-meta"><span>{data.category}</span><span>Adot Technologies</span></div><h3>{data.title}</h3><p>{data.description}</p></a>

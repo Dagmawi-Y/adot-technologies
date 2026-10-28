@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import PageIntro from '@/components/site/PageIntro.astro';
+import ServiceCard from '@/components/site/ServiceCard.astro';
+import LinkButton from '@/components/site/LinkButton.astro';
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+---
+<Layout title="Our services" description="Website design and development, mobile apps, and custom software from Adot Technologies in Addis Ababa."><PageIntro title="Whatever’s next, we’ll build it with you." description="A new online presence, an app idea, or software to make work simpler. Let’s find the right solution for your business." /><section class="site-container services-overview"><div class="service-grid grid gap-5 md:grid-cols-2">{services.map(service => <ServiceCard service={service} fullTitle />)}</div></section><section class="site-container section story-grid"><h2>Start with a conversation.</h2><div><p>You don’t need all the answers to get started. Tell us about your goals and we can explore the right way forward together.</p><p><LinkButton href="/contact/" variant="dark">Tell us what you have in mind</LinkButton></p></div></section></Layout>

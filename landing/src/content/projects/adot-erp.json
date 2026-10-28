@@ -1,0 +1,12 @@
+{
+  "title": "Adot ERP",
+  "order": 3,
+  "category": "Custom software",
+  "client": "Adot Technologies",
+  "description": "An enterprise resource planning system for managing business operations.",
+  "image": "/images/erp.webp",
+  "imageAlt": "Adot ERP system screenshot from Adot\u2019s software portfolio",
+  "overview": "Adot ERP is Adot Technologies\u2019 enterprise resource planning product, built to help businesses manage their operations.",
+  "service": "custom-software",
+  "source": "https://www.adotsystems.tech/"
+}
