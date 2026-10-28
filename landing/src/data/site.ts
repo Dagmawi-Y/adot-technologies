@@ -1,21 +1,30 @@
 export const site = {
   name: 'Adot Technologies',
   tagline: 'Powering Bold Dreams.',
+  description: 'Websites, mobile apps, and custom software for businesses across Africa. Adot Technologies is based in Addis Ababa, Ethiopia.',
   url: 'https://www.adotsystems.tech',
   email: 'contact@adotsystems.tech',
   phone: '+251 94 843 5765',
   phoneHref: '+251948435765',
   secondPhone: '+251 93 746 6731',
   address: 'City Point Hub, 22 Mazoria, Addis Ababa, Ethiopia',
-  labs: 'https://www.adotsystems.tech/adot-labs',
-  products: 'https://www.adotsystems.tech/products',
-  terms: 'https://www.adotsystems.tech/terms',
+  postalAddress: { '@type': 'PostalAddress', streetAddress: 'City Point Hub, 22 Mazoria', addressLocality: 'Addis Ababa', addressCountry: 'ET' },
+  labs: '/adot-labs/',
+  products: '/products/',
+  terms: '/terms/',
+  hours: { days: 'Monday–Saturday', opens: '08:30', closes: '17:30', label: '8:30am–5:30pm', timezone: 'EAT (UTC+3)' },
 };
 
 // Names and roles published at https://www.adotsystems.tech/about.
 export const team = [
   { name: 'Dagmawi Yohannes', role: 'Founder & CEO', image: '/images/dagmawi.png' },
   { name: 'Redeat Ephrem', role: 'Co-founder & CPO', image: '/images/redeat.png' },
+];
+
+// Client logos from Adot’s published homepage; both companies also appear in the portfolio.
+export const clients = [
+  { name: 'WTB Import and Export', logo: '/images/clients/wtb.jpg', width: 640, height: 640 },
+  { name: 'Faith Import & Trade', logo: '/images/clients/faith.webp', width: 256, height: 96 },
 ];
 
 export const questions = [

@@ -1,0 +1,137 @@
+{
+  "title": "Website or Mobile App? A Decision Guide for African Businesses",
+  "seoTitle": "Website vs Mobile App in Africa",
+  "slug": "website-vs-mobile-app-africa",
+  "order": 2,
+  "date": "2026-10-28",
+  "category": "Product decisions",
+  "description": "Choose a website, PWA, or mobile app for an African business using task frequency, offline needs, payment verification, and a practical pilot.",
+  "image": "/images/generated/journal-web.jpg",
+  "imageAlt": "A laptop showing a public website alongside browser development tools",
+  "sections": [
+    {
+      "id": "choose-the-job-before-the-channel",
+      "title": "Choose the customer’s job before choosing the platform",
+      "paragraphs": [
+        "Start with a website when the main job is helping new customers discover your business, understand the offer, and make an enquiry or purchase. Consider a mobile app when a defined group will use it repeatedly and you can identify a concrete benefit from device integration, dependable offline work, or a more efficient recurring task. A progressive web app, or PWA, is a browser-based option worth testing between those choices.",
+        "‘Our customers use phones’ does not settle the decision. Websites also run on phones. The stronger question is: what task becomes meaningfully better after asking someone to adopt an app? If the answer is only ‘they can see our services’, a well-built mobile website may already do the job.",
+        "For a business serving African markets, include your actual operating conditions in the brief: customers’ devices, where they encounter your link, the connections they use, the languages they need, and how orders or payments are confirmed. Test those conditions with the intended users rather than relying on a national stereotype or a generic mobile-usage statistic."
+      ]
+    },
+    {
+      "id": "compare-three-delivery-options",
+      "title": "A website, a PWA, and an app solve overlapping problems",
+      "paragraphs": [
+        "A public website is useful at the point of discovery: a customer can follow a link to a specific product or service without first deciding whether your software deserves a place on their phone. That matters when the customer has not yet chosen your business.",
+        "A PWA is still built with web technologies. It can add capabilities such as cached resources and an app-like experience where supported. Installing a PWA and registering its service worker are separate processes; offline behaviour has to be designed. Google’s service-worker guidance also notes that the worker does not control the first visit immediately.",
+        "A mobile app can be justified by a recurring job or a tested device requirement. It also creates a product you must distribute, maintain, and test. Neither the app label nor the PWA label proves that the workflow is reliable. Ask for a demonstration of the required behaviour on the devices you intend to support."
+      ],
+      "table": {
+        "caption": "Match the delivery option to a demonstrable need",
+        "columns": ["Option", "A strong reason to consider it", "The question to test"],
+        "rows": [
+          ["Mobile-friendly website", "Public information, occasional enquiries, shareable service or product pages", "Can a first-time visitor finish the important task from a link?"],
+          ["Progressive web app", "Browser access plus selected cached or app-like workflows", "Does the required behaviour work on the actual browsers, devices, and connection states?"],
+          ["Mobile app", "Frequent use with a proven device, workflow, or offline requirement", "Is the improvement large enough to justify adoption and ongoing product support?"]
+        ]
+      },
+      "sources": [
+        { "label": "Google’s explanation of service workers and their lifecycle", "url": "https://web.dev/learn/pwa/service-workers" }
+      ]
+    },
+    {
+      "id": "measure-the-whole-adoption-path",
+      "title": "Measure completed jobs, not just users who got past setup",
+      "paragraphs": [
+        "An app can feel more effective when you measure only the people who installed it. That leaves out customers who stopped before reaching the first useful screen. A website can have the same measurement problem if you count only visitors who reached the form.",
+        "The invented example below illustrates the denominator problem. It is not a finding about Ethiopian customers, a conversion benchmark, or a prediction for your business. Imagine two small trials that each invite twenty relevant people to complete the same job.",
+        "Eight out of ten app adopters complete the task, which looks stronger than nine out of sixteen website visitors. Across everyone invited, however, the website produces nine completed jobs and the app produces eight. The example does not prove websites are better; it shows why you must include adoption friction in the comparison.",
+        "For your own pilot, record the invitation, opening or installation, first useful action, completed job, and later repeat use. Ask where people stopped and why. A small pilot is useful for finding obstacles, not for declaring statistically reliable market-wide preferences."
+      ],
+      "table": {
+        "caption": "An imaginary adoption test: follow the full journey",
+        "columns": ["Step", "Website trial", "App trial"],
+        "rows": [
+          ["People invited", "20", "20"],
+          ["People who opened or installed", "16", "10"],
+          ["People who completed the job", "9", "8"],
+          ["Completed jobs divided by invitations", "45%", "40%"]
+        ]
+      }
+    },
+    {
+      "id": "define-offline-work-precisely",
+      "title": "‘Works offline’ needs four separate definitions",
+      "paragraphs": [
+        "An offline screen can display a previously loaded record without being able to save new work. A saved draft can exist on one phone without having reached the business. An order can reach a server without stock or payment being confirmed. If all those states display the same green success message, the product is hiding operational uncertainty.",
+        "Android’s official offline-first guidance distinguishes local data from network data and treats synchronisation and conflicting writes as design problems. That principle matters whether you build a browser application or a mobile app: name what has been saved, where it has been saved, and what still needs confirmation.",
+        "For example, suppose two field staff are offline and each requests the last item shown in their cached stock list. Both devices can preserve the request, but that does not establish which request the business can fulfil. Agree whether the server rejects one, creates a backorder, or sends the conflict to a person. The interface should explain the outcome rather than silently overwrite one person’s work."
+      ],
+      "table": {
+        "caption": "Specify the promise attached to each offline state",
+        "columns": ["State", "What the user can reasonably understand", "What still needs a decision"],
+        "rows": [
+          ["Available offline", "Previously stored information can be read", "How old is it, and when must it be refreshed?"],
+          ["Saved on this device", "The draft is stored locally", "What happens if the app closes or the device is lost?"],
+          ["Waiting to sync", "The request has not yet been confirmed centrally", "How are retries, duplicates, and conflicts handled?"],
+          ["Confirmed by the business", "The server has accepted the relevant operation", "Does this include stock, approval, and payment, or only receipt?"]
+        ]
+      },
+      "sources": [
+        { "label": "Android Developers’ offline-first architecture guide", "url": "https://developer.android.com/topic/architecture/data-layer/offline-first" }
+      ]
+    },
+    {
+      "id": "test-payment-confirmation",
+      "title": "Local payment integration is a separate decision",
+      "paragraphs": [
+        "Needing online payments does not, by itself, establish a need for an app. Separate the customer’s interface from the server-side work that creates, verifies, and reconciles a payment. Confirm the provider’s current merchant requirements, supported methods, pricing, and settlement arrangements directly with the provider.",
+        "As an Ethiopian payment-provider example, Chapa documents a server-side verification request using the transaction reference and a secret key. The business should not treat a browser redirect or a customer’s screenshot as its authoritative payment record. Keep secret credentials out of the browser and mobile application.",
+        "Write the operational test before the developer connects checkout. What happens if the customer pays but loses connection before returning? What happens if the same confirmation is processed twice? Who can find the payment reference when the customer calls? A polished payment button is only the beginning of that workflow."
+      ],
+      "bullets": [
+        "A confirmed payment should be traceable to the intended order, reference, expected amount, and currency.",
+        "A cancelled or failed attempt should not release goods or mark an order as paid.",
+        "A delayed confirmation should have a visible pending state and a reconciliation route.",
+        "Repeated processing of the same confirmed payment should not create a second fulfilment."
+      ],
+      "sources": [
+        { "label": "Chapa’s payment verification documentation", "url": "https://developer.chapa.co/integrations/verify-payments" }
+      ]
+    },
+    {
+      "id": "include-the-operating-product",
+      "title": "Budget for the product behind the screen",
+      "paragraphs": [
+        "The customer-facing application may be only one part of the purchase. Your staff might also need an administration interface, user support, permissions, order handling, reporting, and a backend. Comparing a brochure website quote with a complete mobile service quote is not a platform cost comparison.",
+        "Ask what can genuinely be shared across delivery options: business rules, account data, payment records, and administrative workflows may belong in a common backend. Then identify what each option adds in interface work, device testing, release management, and support. Reuse should be explained in the proposal rather than assumed from a technology name.",
+        "Consider the next operational change as well as the launch. If the business introduces a new delivery area or product type, who updates the rules? Does the change require a release, an admin edit, or developer work? The answer affects operating effort long after the first development invoice."
+      ],
+      "links": [
+        { "label": "Use the website quotation guide to compare scope and recurring costs", "href": "/blog/website-development-cost-ethiopia/" },
+        { "label": "If the main problem is internal operations, compare ERP and custom software", "href": "/blog/erp-vs-custom-software-africa/" }
+      ]
+    },
+    {
+      "id": "run-a-decision-pilot",
+      "title": "A short pilot can answer more than a feature debate",
+      "paragraphs": [
+        "Choose one valuable task and test the lightest credible version of it. For a service company, that could be finding the right service and submitting a useful enquiry. For field staff, it could be opening an assigned job, saving a visit report without connection, and reconciling it later. These are different products even if both run on a phone.",
+        "Write the result that would change your decision before running the test. If customers complete an occasional task comfortably from a link, the app needs another justification. If a required offline or device workflow cannot be delivered reliably by the web prototype, you have a specific reason to investigate an app.",
+        "Choose the platform after you can describe its benefit in a sentence about the user’s work. That sentence becomes a useful acceptance criterion and a better starting point for a development quotation."
+      ],
+      "steps": [
+        "Name the intended user, one recurring or first-time task, and the result the business needs.",
+        "List the actual devices, browsers, languages, and connection conditions to include in the trial.",
+        "Test first use from the real entry point: a shared link, search result, invitation, or installation process.",
+        "Interrupt the connection, close the product, reopen it, and check whether the user’s work remains in an understandable state.",
+        "For shared records, test two users changing the same item and make the conflict outcome explicit.",
+        "Compare completed jobs, repeat use, support effort, and unresolved failures before committing to the larger build."
+      ],
+      "links": [
+        { "label": "Explore Adot’s mobile application development service", "href": "/services/app-development/" },
+        { "label": "Discuss an app or web workflow with Adot", "href": "/contact/?service=app-development" }
+      ]
+    }
+  ]
+}

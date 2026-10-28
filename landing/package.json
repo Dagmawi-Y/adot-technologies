@@ -12,6 +12,7 @@
     "astro": "astro",
     "check": "astro check",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
+    "audit:seo": "node scripts/audit-seo.mjs",
     "deploy": "wrangler deploy"
   },
   "dependencies": {

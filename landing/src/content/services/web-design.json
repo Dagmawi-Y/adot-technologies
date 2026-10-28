@@ -3,9 +3,9 @@
   "shortTitle": "Web design",
   "order": 4,
   "description": "Design with a purpose. Clear, considered interfaces that make your brand feel like you and give visitors a natural next step.",
-  "intro": "Make every interaction feel considered. We design websites that bring together your identity, clear navigation, and an experience built for your audience.",
-  "image": "/images/web-design.webp",
-  "imageAlt": "Creative website design imagery from Adot Technologies",
+  "intro": "Give visitors a clear route from understanding your business to taking the next step. We design websites for teams across Africa, starting with your content, audience, and the way people will use each page.",
+  "image": "/images/generated/web-design.jpg",
+  "imageAlt": "Pencil website wireframes and a laptop on a designer’s worktable",
   "icon": "pen",
   "features": [
     "Custom visual design",
@@ -27,5 +27,34 @@
       "description": "Review the design together and prepare it for development."
     }
   ],
-  "source": "https://www.adotsystems.tech/services/web-design"
+  "source": "https://www.adotsystems.tech/services/web-design",
+  "seoTitle": "Web Design Services for African Businesses",
+  "seoDescription": "Purposeful website design for African businesses. Work with Adot in Addis Ababa on content hierarchy, responsive layouts, navigation, and a clear user experience.",
+  "useCases": [
+    "A clear visual direction and page hierarchy for a new company website.",
+    "A redesign that makes existing services, products, or projects easier to understand.",
+    "Responsive page layouts and interface patterns prepared for development."
+  ],
+  "questions": [
+    {
+      "question": "What is the difference between web design and development?",
+      "answer": "Design defines the page hierarchy, visual language, content presentation, and interactions. Development turns that direction into a working website with the required integrations and publishing process. A proposal should make clear whether one or both are included."
+    },
+    {
+      "question": "Can we redesign an existing website?",
+      "answer": "Start by reviewing the pages and journeys that need improvement. Preserve useful content and working URLs where appropriate, and plan redirects for any meaningful replacements. A redesign should include a content and migration plan as well as new layouts."
+    },
+    {
+      "question": "How do we plan for more than one language?",
+      "answer": "Identify the languages and who supplies approved translations before finalising layouts. Text length, navigation labels, typography, and reading direction can affect the design. Each published language version needs complete content and its own review."
+    },
+    {
+      "question": "What design work will we receive?",
+      "answer": "Agree the page types, responsive states, interaction details, design files, and development handover in the scope. Explain who will implement the design so the handover includes the information that team needs."
+    }
+  ],
+  "guideSlugs": [
+    "website-development-cost-ethiopia",
+    "website-vs-mobile-app-africa"
+  ]
 }

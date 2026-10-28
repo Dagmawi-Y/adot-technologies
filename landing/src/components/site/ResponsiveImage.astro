@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import type { HTMLAttributes } from 'astro/types';
+import { imageAsset } from '@/lib/images';
+
+interface Props extends Omit<HTMLAttributes<'img'>, 'src' | 'alt'> { src: string; alt: string; widths?: number[]; }
+const { src, alt, width: _width, height: _height, widths: requestedWidths, loading = 'lazy', sizes = '(min-width: 1296px) 1200px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 28px)', ...attributes } = Astro.props;
+const asset = imageAsset(src);
+const widths = [...new Set((requestedWidths ?? [320, 480, 768, 1024, 1440, asset.width]).filter(width => width <= asset.width))].sort((a, b) => a - b);
+---
+<Image src={asset} alt={alt} widths={widths} sizes={sizes} format="webp" quality={80} loading={loading} decoding="async" {...attributes} />

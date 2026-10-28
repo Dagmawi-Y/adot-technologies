@@ -3,9 +3,9 @@
   "shortTitle": "Custom software",
   "order": 3,
   "description": "Software that fits the way you work. Tailored systems to support your operations and solve the challenges that matter to your business.",
-  "intro": "Every business works differently. We create software around your specific requirements, from internal tools to systems that support your everyday operations.",
-  "image": "/images/software.webp",
-  "imageAlt": "Custom software development imagery from Adot Technologies",
+  "intro": "Start with the work your business needs to do. We help teams across Africa plan and build software around their operations, from our base in Addis Ababa. Shared records, permissions, integrations, and exceptions belong in the first conversation.",
+  "image": "/images/generated/custom-software.jpg",
+  "imageAlt": "A business operations interface beside a hand-drawn workflow",
   "icon": "code",
   "features": [
     "Business-specific solutions",
@@ -27,5 +27,34 @@
       "description": "Test the system, prepare for deployment, and provide ongoing support."
     }
   ],
-  "source": "https://www.adotsystems.tech/services/custom-software"
+  "source": "https://www.adotsystems.tech/services/custom-software",
+  "seoTitle": "Custom Software Development for Africa",
+  "seoDescription": "Custom software development for businesses across Africa. Map workflows, compare ERP options, plan data migration, and build around your operations with Adot.",
+  "useCases": [
+    "An internal workflow that needs clear ownership, approvals, and traceable records.",
+    "A specific integration between systems that otherwise serve the business well.",
+    "A business application whose important requirements cannot be met adequately through an existing tool."
+  ],
+  "questions": [
+    {
+      "question": "How do we choose between an ERP and custom software?",
+      "answer": "Map the workflow and test existing systems against it. An ERP may fit familiar processes through configuration. A narrow integration can close a specific gap. A custom build needs a clear requirement that remains unmet, along with a plan for ownership and ongoing maintenance."
+    },
+    {
+      "question": "What happens to our existing records?",
+      "answer": "Data migration needs its own scope. Identify record owners, stable identifiers, units, currencies, date conventions, attachments, and relationships. Use representative data for a test import and agree how counts, totals, and linked transactions will be reconciled."
+    },
+    {
+      "question": "Who controls the accounts, code, and business data?",
+      "answer": "Ownership, licences, administrator access, code handover where agreed, and data export are separate questions. The proposal and applicable terms should define them explicitly. Ask what you can obtain or move if the supplier relationship ends."
+    },
+    {
+      "question": "How should we plan ongoing support?",
+      "answer": "Agree who handles faults, releases, external-service changes, backups, and recovery. Define support coverage and the process for new requests. The people responsible for the system should be able to explain how it is operated after launch."
+    }
+  ],
+  "guideSlugs": [
+    "erp-vs-custom-software-africa",
+    "website-vs-mobile-app-africa"
+  ]
 }

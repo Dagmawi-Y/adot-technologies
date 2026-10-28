@@ -1,0 +1,12 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageIntro from '@/components/site/PageIntro.astro';
+import LinkButton from '@/components/site/LinkButton.astro';
+import ResponsiveImage from '@/components/site/ResponsiveImage.astro';
+import { products } from '@/data/products';
+---
+<Layout title="Our products" seoTitle="Adot ERP & Youthopia: Our Software Products" description="Explore Adot Technologies’ products: Adot ERP for Ethiopian business operations and Youthopia for children’s learning and entertainment. Talk to our product team.">
+  <PageIntro title="Useful ideas. Built into products." description="Alongside client projects, we build products that address business operations and learning. Explore their focus and speak to us about what you need." />
+  {products.map(product => <section class="site-container section detail-hero"><ResponsiveImage src={product.image} alt={product.imageAlt} sizes="(min-width: 1100px) 700px, (min-width: 768px) 58vw, calc(100vw - 28px)" /><aside><h2>{product.title}</h2><p class="empty-space-note">{product.overview}</p><LinkButton href={`/products/${product.id}/`} variant="dark">Explore {product.title}</LinkButton></aside></section>)}
+  <section class="site-container section story-grid"><h2>A new idea in mind?</h2><div><p>Adot Labs brings experimentation, mentorship, and product development together.</p><LinkButton href="/adot-labs/">Discover Adot Labs</LinkButton></div></section>
+</Layout>

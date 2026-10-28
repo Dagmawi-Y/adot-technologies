@@ -1,0 +1,11 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import terms from '@/data/terms.json';
+---
+<Layout title="Terms of Service" description="Read the Terms of Service for Adot Technologies, including service agreements, payments, intellectual property, confidentiality, and dispute resolution.">
+  <article class="site-container legal-page">
+    <h1>Terms of Service</h1>
+    <p class="legal-intro">The terms that apply to Adot Technologies and our services. For information about this website’s enquiry form, read our <a class="inline-link" href="/privacy/">privacy notice</a>.</p>
+    {terms.map(section => <section><h2>{section.title}</h2><p>{section.text}</p></section>)}
+  </article>
+</Layout>

@@ -2,10 +2,10 @@
   "title": "App Development",
   "shortTitle": "Mobile applications",
   "order": 2,
-  "description": "Your idea, in people\u2019s hands. User-friendly mobile applications that connect your business to the people who need it.",
-  "intro": "Bring your app idea to life. We design and develop mobile applications for Android and iOS, with your users at the heart of the experience.",
-  "image": "/images/mobile.webp",
-  "imageAlt": "Mobile app development imagery from Adot Technologies",
+  "description": "Your idea, in people’s hands. User-friendly mobile applications that connect your business to the people who need it.",
+  "intro": "Turn a useful recurring task into a focused mobile experience. Based in Addis Ababa and working with teams across Africa, we plan Android and iOS applications around your users, operating conditions, and business workflow.",
+  "image": "/images/generated/app-development.jpg",
+  "imageAlt": "Hands testing a simple mobile interface on a smartphone",
   "icon": "phone",
   "features": [
     "Android and iOS applications",
@@ -27,5 +27,34 @@
       "description": "Test the experience, prepare for release, and plan ongoing support."
     }
   ],
-  "source": "https://www.adotsystems.tech/services/app-development"
+  "source": "https://www.adotsystems.tech/services/app-development",
+  "seoTitle": "Mobile App Development for African Businesses",
+  "seoDescription": "Mobile app development for businesses across Africa. Plan Android and iOS experiences, offline behaviour, backend workflows, and launch support with Adot.",
+  "useCases": [
+    "A customer application for a clearly defined recurring service.",
+    "A mobile workflow for staff who need to record or review work away from a desk.",
+    "A focused first release that tests a valuable task before expanding the product."
+  ],
+  "questions": [
+    {
+      "question": "Should the first version support Android and iOS?",
+      "answer": "Use evidence about the intended users and their devices. Decide which platform or platforms the first release must support, then include device testing, distribution, updates, and support in the scope. Avoid choosing from assumptions about an entire country or region."
+    },
+    {
+      "question": "Will the app work offline?",
+      "answer": "Offline behaviour must be specified. Reading cached information, saving a local draft, waiting to sync, and receiving server confirmation are separate states. Agree which tasks work without connection and how the product resolves repeated submissions or conflicting changes."
+    },
+    {
+      "question": "Will the app need a backend or administration system?",
+      "answer": "Shared accounts, orders, payments, approvals, or records often require services beyond the mobile interface. Review any existing systems first, decide which one owns each record, and price the administration and support workflow alongside the app."
+    },
+    {
+      "question": "Can we test the idea before a full build?",
+      "answer": "A focused prototype or pilot can help test a critical journey. Choose the intended users, task, devices, and connection conditions, then define what evidence would justify the next development stage. The pilot should answer a decision rather than imitate a complete product."
+    }
+  ],
+  "guideSlugs": [
+    "website-vs-mobile-app-africa",
+    "erp-vs-custom-software-africa"
+  ]
 }

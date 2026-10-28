@@ -1,0 +1,16 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageIntro from '@/components/site/PageIntro.astro';
+import LinkButton from '@/components/site/LinkButton.astro';
+import ResponsiveImage from '@/components/site/ResponsiveImage.astro';
+import { products } from '@/data/products';
+export function getStaticPaths() { return products.map(product => ({ params: { id: product.id }, props: { product } })); }
+interface Props { product: typeof products[number]; }
+const { product } = Astro.props;
+---
+<Layout title={product.title} seoTitle={product.seoTitle} description={product.description} image={product.image} imageAlt={product.imageAlt}>
+  <PageIntro title={product.title} description={product.intro} backHref="/products/" backLabel="All products" />
+  <div class="site-container detail-hero"><ResponsiveImage src={product.image} alt={product.imageAlt} loading="eager" fetchpriority="high" sizes="(min-width: 1100px) 700px, (min-width: 768px) 58vw, calc(100vw - 28px)" /><aside><h2>{product.title === 'Adot ERP' ? 'Connect the everyday work.' : 'Room to learn and discover.'}</h2><p class="empty-space-note">{product.overview}</p><LinkButton href={`/contact/?service=${product.service}`} variant="orange">{product.action}</LinkButton></aside></div>
+  <section class="site-container section"><div class="section-heading"><h2>A closer look.</h2></div><div class="process-grid grid gap-6 md:grid-cols-3">{product.features.map((feature, i) => <article><span class="process-number">0{i + 1}</span><h3>{feature.title}</h3><p>{feature.description}</p></article>)}</div></section>
+  <section class="site-container section story-grid"><h2>Start with your questions.</h2><div><p>{product.next}</p><p><a class="inline-link" href={product.guide}>{product.guideLabel}</a></p><LinkButton href={`/contact/?service=${product.service}`} variant="dark">{product.action}</LinkButton></div></section>
+</Layout>

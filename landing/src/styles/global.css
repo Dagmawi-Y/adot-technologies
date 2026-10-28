@@ -3,8 +3,15 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-@import '@fontsource-variable/manrope';
 @import './reference.css';
+
+@font-face {
+  font-family: 'Manrope Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2') format('woff2');
+}
 
 @theme inline {
   --font-sans: 'Manrope Variable', sans-serif;
@@ -101,6 +108,11 @@
 .adot-mark { filter: brightness(0) invert(1); }
 .hero-location { font-size: 15px; font-weight: 650; }
 .hero-reviews p { margin-top: 4px; }
+.hero-clients { flex-shrink: 0; padding-top: 10px; }
+.hero-client-logos { display: flex; align-items: center; gap: 20px; }
+.hero-client-logos img { width: auto; height: 52px; max-width: 140px; object-fit: contain; }
+.hero-clients p { margin-top: 12px; color: var(--color-muted); font-size: 13px; }
+.about-images .planning-image img, .wide-photo img { object-position: center 35%; }
 .stats-grid strong { font-size: clamp(28px, 3.5vw, 46px); letter-spacing: -.055em; }
 .adot-team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 790px; }
 .adot-team-grid .team-portrait { aspect-ratio: 4 / 4.3; }
@@ -114,6 +126,24 @@
 .service-grid, .project-grid, .blog-grid, .about-images, .detail-hero { min-width: 0; }
 .service-grid > *, .project-grid > *, .blog-grid > * { min-width: 0; }
 .noscript-nav { padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; background: var(--color-panel); }
+.nav-dropdown { --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
+.nav-dropdown::details-content { transition: content-visibility 160ms allow-discrete; }
+.nav-dropdown .dropdown-panel {
+  opacity: 0;
+  transform: translateY(-4px);
+  transform-origin: top left;
+  transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out);
+}
+.nav-dropdown[open] .dropdown-panel { opacity: 1; transform: translateY(0); }
+@starting-style {
+  .nav-dropdown[open] .dropdown-panel { opacity: 0; transform: translateY(-4px); }
+}
+.dropdown-panel::before { content: ''; position: absolute; inset: -22px 0 100%; }
+.nav-dropdown[data-keyboard]::details-content,
+.nav-dropdown[data-keyboard] .dropdown-panel { transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .nav-dropdown .dropdown-panel { transform: none; }
+}
 [data-reveal] { opacity: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .reveal-enter { animation: reveal-in .65s cubic-bezier(.2,.7,.2,1) both; }
@@ -166,6 +196,27 @@ button:disabled { color: var(--color-muted); background: var(--color-line); curs
 .project-facts dd { margin: 0; }
 .not-found-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
 .story-grid p + p { margin-top: 20px; }
+.project-scope { margin-top: 30px; }
+.project-scope h3 { margin-bottom: 18px; }
+.legal-page section p + p { margin-top: 20px; }
+.article-body, .article-intro { min-width: 0; }
+.article-intro h1 { text-wrap: balance; }
+.article-body p, .legal-page p { overflow-wrap: anywhere; }
+.article-body section { scroll-margin-top: 130px; }
+.article-body ol { list-style: decimal; padding-inline-start: 24px; margin-top: 24px; }
+.article-comparison { margin: 26px 0; }
+.article-comparison figcaption { text-align: start; font-weight: 650; font-size: 14px; line-height: 1.65; margin-bottom: 14px; }
+.article-table-scroll { max-width: 100%; overflow-x: auto; }
+.article-table { width: 100%; min-width: 600px; border-collapse: collapse; text-align: start; font-size: 14px; line-height: 1.65; }
+.article-table th, .article-table td { padding: 15px 12px; border-bottom: 1px solid var(--color-line); vertical-align: top; text-align: start; }
+.article-table thead th { background: var(--color-panel); font-weight: 650; }
+.article-table tbody th { font-weight: 600; }
+.article-table td { color: var(--color-muted); }
+.article-body .article-sources { font-size: 13px; line-height: 1.7; margin-top: 18px; }
+.article-body .article-sources a, .article-links a { color: var(--color-ink); text-decoration: underline; text-underline-offset: 4px; }
+.service-guide-links { display: grid; gap: 28px; list-style: none; padding: 0; }
+.service-guide-links a { font-size: 20px; font-weight: 600; }
+.service-guide-links p { margin-top: 10px; }
 .brand-footer { font-size: 15px; letter-spacing: -.035em; }
 .brand-footer .brand-mark { width: 24px; height: 24px; }
 .button:active, .nav-quote:active, .call-button:active { transform: translateY(1px); }

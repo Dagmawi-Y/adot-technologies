@@ -1,0 +1,20 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import PageIntro from '@/components/site/PageIntro.astro';
+import ResponsiveImage from '@/components/site/ResponsiveImage.astro';
+import LinkButton from '@/components/site/LinkButton.astro';
+const activities = [
+  { title: 'Idea incubation', description: 'Mentorship, technical discussion, and consulting to help aspiring innovators develop an idea into a clearer product direction.' },
+  { title: 'Product experiments', description: 'Exploring useful solutions through prototypes and product development, with a focus on practical problems.' },
+  { title: 'Open-source work', description: 'Developing and sharing tools that can help other developers and businesses build.' },
+  { title: 'Internships and mentorship', description: 'Connecting learning with hands-on project experience. Contact the team for current opportunities and application details.' },
+  { title: 'TechTonic Club collaboration', description: 'Supporting the TechTonic Club at Debre Berhan University through mentorship, shared projects, and technical collaboration.' },
+];
+---
+<Layout title="Adot Labs" seoTitle="Adot Labs: Innovation, Mentorship & Product Development" description="Explore Adot Labs, Adot Technologies’ innovation hub for idea incubation, product experiments, open-source work, internships, and technical mentorship in Ethiopia." image="/images/generated/mentoring.jpg" imageAlt="An illustrative mentoring conversation over project notes">
+  <PageIntro title="Adot Labs" description="A place for ideas, experiments, and the people learning to build what comes next." />
+  <div class="site-container wide-photo"><ResponsiveImage src="/images/generated/mentoring.jpg" alt="An illustrative mentoring conversation over project notes" loading="eager" fetchpriority="high" /></div>
+  <section class="site-container section story-grid"><h2>Innovation starts<br />with participation.</h2><div><p>Adot Labs is the innovation hub of Adot Technologies. It brings idea incubation, product development, open-source contributions, and mentorship together, helping students and aspiring innovators connect technical learning with useful projects.</p><p>Our work also includes collaboration with the TechTonic Club at Debre Berhan University. The focus is on shared learning, practical experience, and ideas that respond to problems people actually face.</p></div></section>
+  <section class="site-container section"><div class="section-heading"><h2>Ways to get involved.</h2></div><div class="process-grid grid gap-6 md:grid-cols-3">{activities.map((activity, i) => <article><span class="process-number">0{i + 1}</span><h3>{activity.title}</h3><p>{activity.description}</p></article>)}</div></section>
+  <section class="site-container section story-grid"><h2>Bring an idea.<br />Or a willingness to learn.</h2><div><p>Tell us about your interests, the problem you want to explore, and what you have tried so far. If you are asking about an internship, include the skills you are developing and the kind of project you would like to contribute to.</p><p>Opportunities and project needs change. Contact the team to discuss current availability, participation, and the right next step.</p><LinkButton href="/contact/" variant="orange">Talk to Adot Labs</LinkButton><p><a class="inline-link" href="/products/">Explore the products we build</a></p></div></section>
+</Layout>

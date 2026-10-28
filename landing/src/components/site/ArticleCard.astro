@@ -1,8 +1,10 @@
 ---
+import ResponsiveImage from '@/components/site/ResponsiveImage.astro';
 import type { CollectionEntry } from 'astro:content';
 import Icon from './Icon.astro';
+import { articleReadingTime, formatArticleDate } from '@/lib/articles';
 interface Props { article: CollectionEntry<'articles'>; }
 const { article: { data } } = Astro.props;
-const date = new Intl.DateTimeFormat('en', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(data.date));
+const date = formatArticleDate(data.date);
 ---
-<article class="blog-card" data-reveal><a class="blog-card-link" href={data.source}><div class="blog-image"><img src={data.image} alt={data.imageAlt} width="1000" height="667" loading="lazy" /><span class="blog-category">{data.category}</span></div><div class="blog-card-content"><div class="blog-meta"><time datetime={data.date}>{date}</time><span>Adot journal</span></div><h3>{data.title}</h3><span class="blog-read">Read the article<span class="blog-arrow"><Icon size={18} /></span></span></div></a></article>
+<article class="blog-card" data-reveal><a class="blog-card-link" href={`/blog/${data.slug}/`}><div class="blog-image"><ResponsiveImage src={data.image} alt={data.imageAlt} width="1000" height="667" loading="lazy" sizes="(min-width: 1100px) 384px, (min-width: 768px) 30vw, calc(100vw - 28px)" /><span class="blog-category">{data.category}</span></div><div class="blog-card-content"><div class="blog-meta"><time datetime={data.date}>{date}</time><span>{articleReadingTime(data)}</span></div><h3>{data.title}</h3><span class="blog-read">Read the article<span class="blog-arrow"><Icon size={18} /></span></span></div></a></article>

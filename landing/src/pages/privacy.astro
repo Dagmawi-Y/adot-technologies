@@ -1,0 +1,37 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { site } from '@/data/site';
+---
+<Layout title="Privacy notice" description="How Adot Technologies handles contact enquiries and information provided through this website.">
+  <article class="site-container legal-page">
+    <h1>Privacy notice</h1>
+    <p class="legal-intro">This notice explains how information moves through the Adot Technologies website and contact form. Updated <time datetime="2026-10-28">28 October 2026</time>.</p>
+    <section>
+      <h2>Who to contact</h2>
+      <p>Adot Technologies is based at {site.address}. For questions about your information, email <a class="inline-link" href={`mailto:${site.email}`}>{site.email}</a> or call <a class="inline-link" href={`tel:${site.phoneHref}`}>{site.phone}</a>.</p>
+    </section>
+    <section>
+      <h2>Your enquiry</h2>
+      <p>The contact form asks for your name, email address, the service you are interested in, and a description of your project. You can also provide your phone number and company name. We use these details to respond to your enquiry and discuss your project.</p>
+      <p>Please include only information relevant to your enquiry. The form is not intended for passwords, payment details, or other sensitive records. Submitting an enquiry does not subscribe you to a newsletter.</p>
+    </section>
+    <section>
+      <h2>How your message reaches us</h2>
+      <p>The form is processed through our Cloudflare hosting service. When a submission is accepted, its contents are sent through Resend to our contact mailbox, with your email address used as the reply address. Our form endpoint does not write enquiries to a website database or include their contents in application logs.</p>
+      <p>Cloudflare, Resend, and our email service process information needed to provide their services. Their infrastructure may be outside Ethiopia. Read <a class="inline-link" href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s privacy policy</a> and <a class="inline-link" href="https://resend.com/legal/privacy-policy">Resend’s privacy policy</a> for information about those providers.</p>
+    </section>
+    <section>
+      <h2>Website use and cookies</h2>
+      <p>This website does not include advertising trackers, analytics scripts, or a newsletter signup. Our hosting provider may process technical request and diagnostic information to deliver the site, investigate errors, and protect the service.</p>
+      <p>Links to other websites, including Adot products and Adot Labs, take you to services with their own information practices.</p>
+    </section>
+    <section>
+      <h2>Your correspondence and requests</h2>
+      <p>Enquiries delivered by email become part of our correspondence with you. To ask about information held in that correspondence, its retention, or to request a correction or deletion, contact <a class="inline-link" href={`mailto:${site.email}`}>{site.email}</a>. Please identify the email address used for your enquiry so we can locate it.</p>
+    </section>
+    <section>
+      <h2>Changes to this notice</h2>
+      <p>We will update this page when the website’s information practices change. The date above identifies the latest update.</p>
+    </section>
+  </article>
+</Layout>

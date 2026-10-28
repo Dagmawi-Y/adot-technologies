@@ -1,0 +1,147 @@
+{
+  "title": "ERP or Custom Software? A Practical Guide for African SMEs",
+  "seoTitle": "ERP vs Custom Software for African SMEs",
+  "slug": "erp-vs-custom-software-africa",
+  "order": 3,
+  "date": "2026-10-28",
+  "category": "Business systems",
+  "description": "Compare spreadsheets, ERP, and custom software for an African SME. Use a workflow audit, vendor demo script, and data-migration checklist to choose well.",
+  "image": "/images/generated/journal-startup.jpg",
+  "imageAlt": "A planning notebook, pencil, and calculator beside a closed laptop",
+  "sections": [
+    {
+      "id": "identify-the-operating-problem",
+      "title": "Buy a solution to an operating problem",
+      "paragraphs": [
+        "For a small or medium business, evaluate an enterprise resource planning (ERP) system when the main need is coordinating familiar processes such as purchasing, stock, sales, and approvals in shared records. Investigate custom software when an important workflow cannot be served adequately by configuring an existing system. Keep a spreadsheet or a simpler tool when the process is small, controlled, and working. The decision should follow the failures you need to prevent.",
+        "The useful question is not ‘Have we outgrown Excel?’ Ask which business rule is no longer being enforced. Perhaps two people promise the same stock, a purchase is approved after the goods arrive, or no one can explain who changed a balance. Moving those habits into a larger system does not define the missing rule.",
+        "Before inviting demonstrations, collect a few recent examples of rework, delay, or disagreement. Write what happened, which record should have settled it, and who was responsible for the next action. You now have a test brief instead of a wish list of dashboard features."
+      ]
+    },
+    {
+      "id": "map-one-complete-workflow",
+      "title": "Map one complete workflow, including the awkward cases",
+      "paragraphs": [
+        "Start with an actual sequence such as quotation, confirmed order, stock allocation, delivery, and payment reconciliation. For each step, name the record, the person allowed to act, the evidence that the step happened, and the exception that needs handling.",
+        "Do not let software discovery stop at the happy path. A partial delivery, a returned item, a cancelled order, or a correction made after approval will reveal more about the operating model than a dashboard with attractive totals.",
+        "The example below is a planning exercise for a hypothetical trading business. It is not a description of an Adot client or a claim about a delivered system. Replace its steps with your own process before using it in a supplier meeting."
+      ],
+      "table": {
+        "caption": "A workflow brief for a hypothetical trading business",
+        "columns": ["Step", "Record and owner", "Exception to demonstrate"],
+        "rows": [
+          ["Confirm an order", "Order reference; authorised sales staff", "Customer changes quantity after confirmation"],
+          ["Allocate stock", "Allocation linked to the order; stock controller", "Two orders request the same remaining stock"],
+          ["Receive or dispatch goods", "Dated movement and supporting reference; warehouse staff", "Only part of the expected quantity arrives or leaves"],
+          ["Handle a return", "Return linked to its original movement; responsible reviewer", "Returned goods need inspection before becoming sellable"],
+          ["Reconcile the transaction", "Linked order, delivery, and payment evidence; responsible finance user", "Payment and fulfilment do not match yet"]
+        ]
+      }
+    },
+    {
+      "id": "compare-configuration-integration-and-custom",
+      "title": "There are more than two purchasing options",
+      "paragraphs": [
+        "An ERP purchase is not just a software subscription. Someone must map your process, configure roles, prepare data, test the workflow, and train users. A custom build carries those tasks too, plus responsibility for maintaining the application’s own behaviour.",
+        "A narrow integration can be a better answer than replacing everything. If an existing system manages stock correctly but staff copy orders from another channel, investigate connecting those records before commissioning a new stock engine. Define which system remains authoritative for each fact.",
+        "Ask providers to distinguish configuration from customisation. Configuration changes the use of existing capabilities. Custom code adds another maintenance responsibility. Neither is automatically good or bad, but you should know which one you are buying and how upgrades will be tested."
+      ],
+      "table": {
+        "caption": "Four options to evaluate against the same workflow",
+        "columns": ["Option", "When to investigate it", "The responsibility to price"],
+        "rows": [
+          ["Improve the current spreadsheet or simple tool", "A limited process with a clear owner and manageable checking", "Data discipline, controlled editing, and reconciliation"],
+          ["Configure an existing ERP", "The required processes fit the system’s demonstrated capabilities", "Implementation, migration, training, licences, and upgrades"],
+          ["Add an integration or a small custom workflow", "A specific gap sits between otherwise useful systems", "Data ownership, failure handling, and compatibility when either system changes"],
+          ["Build a custom system", "A valuable requirement remains unmet after testing reasonable existing options", "Product ownership, development, security, ongoing changes, and recovery"]
+        ]
+      }
+    },
+    {
+      "id": "define-what-the-numbers-mean",
+      "title": "Agree what ‘stock’ means before trusting a stock total",
+      "paragraphs": [
+        "A total can be mathematically correct and operationally misleading. Physical stock, sellable stock, reserved stock, and goods awaiting inspection are different quantities. Decide which one appears on a sales screen and who can change the underlying status.",
+        "Consider an invented example with no reservations or other movements. The business starts with ten cartons of an item, each containing twelve units. It receives another three cartons, dispatches forty-eight units, and then receives twelve returned units into quarantine. After the return, it physically holds 120 units, but only 108 are available for sale under the agreed inspection rule.",
+        "If eight of those returned units pass inspection, sellable stock becomes 116 while physical stock stays 120. A system that immediately treats all twelve returned units as available has implemented a different business rule. This is the kind of distinction a useful demonstration should make visible.",
+        "Run the same exercise for your own units, locations, approvals, and exceptions. Ask where each total comes from and whether you can trace it back to recorded movements, rather than accepting a manually editable balance as the only evidence."
+      ],
+      "table": {
+        "caption": "Illustrative stock states, with all quantities expressed in individual units",
+        "columns": ["Event", "Physical stock", "Available for sale"],
+        "rows": [
+          ["Opening stock: 10 cartons × 12 units", "120", "120"],
+          ["Receive 3 cartons × 12 units", "156", "156"],
+          ["Dispatch 48 units", "108", "108"],
+          ["Return 12 units to quarantine", "120", "108"],
+          ["Release 8 returned units after inspection", "120", "116"]
+        ]
+      }
+    },
+    {
+      "id": "run-a-scripted-vendor-demo",
+      "title": "Give the vendor a test script, not an open stage",
+      "paragraphs": [
+        "Let the supplier explain the product, then ask them to follow your sequence using sample data. The point is to discover the fit before implementation. A supplier who identifies an unsupported step and explains a reasonable alternative is giving you useful information.",
+        "Permissions deserve their own test. Odoo’s documentation describes assigning access through users and groups; an implementation still needs your particular roles configured appropriately. For custom applications, OWASP recommends checking permissions on every request, rather than relying on the interface to hide an action.",
+        "Ask to see the agreed role restrictions work. If a warehouse user cannot change a selling price, demonstrate the restriction rather than merely showing that the price button is absent. Confirm who can grant new access and how an incorrect transaction is corrected without losing its history."
+      ],
+      "steps": [
+        "Create an item in the agreed unit, then receive a partial quantity against an expected delivery.",
+        "Enter two competing requests for the remaining stock and show the rule that decides what can be committed.",
+        "Process a return, distinguish inspection from availability, and trace the resulting quantities.",
+        "Attempt an action that the current role is not allowed to perform, then show the authorised approval route.",
+        "Correct an approved record and identify the original value, the changed value, the person responsible, and the reason.",
+        "Export the records used in the demonstration, including the references needed to relate them to each other."
+      ],
+      "sources": [
+        { "label": "Odoo’s access-rights documentation", "url": "https://www.odoo.com/documentation/19.0/applications/general/users/access_rights.html" },
+        { "label": "OWASP’s authorization recommendations", "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html" }
+      ]
+    },
+    {
+      "id": "prepare-data-before-migration",
+      "title": "Data preparation is part of implementation",
+      "paragraphs": [
+        "A migration must preserve meaning and relationships, not just move rows. Customer names can repeat. One item can have several spellings. An opening stock figure might include damaged goods that should never become sellable. Decide how these cases will be resolved before importing them.",
+        "Use stable identifiers for records and maintain an explicit mapping between old and new IDs. Odoo’s import guidance illustrates why identifiers matter: they can preserve relationships and help repeated imports update existing records instead of creating duplicates. The documentation also warns that imports are permanent and that date interpretation needs checking.",
+        "When operating across markets, be explicit about calendar and date conventions wherever they appear. For example, if Ethiopian source files contain both Ethiopian and Gregorian dates, a column labelled only ‘date’ is insufficient. Identify the calendar, format, and intended conversion; have someone familiar with the records approve a sample. Likewise, keep units and currency codes explicit instead of assuming every quantity is a piece or every amount is ETB.",
+        "A useful reconciliation compares the result to an agreed baseline: record counts, relevant totals, a sample of linked transactions, and exception reports. Matching the number of imported rows is not enough if customers have been joined to the wrong orders."
+      ],
+      "bullets": [
+        "Create a data dictionary: field meaning, format, unit, currency where applicable, source, and responsible owner.",
+        "Resolve duplicate identities deliberately; do not merge customers or products just because their displayed names match.",
+        "Test a small representative import in a separate environment, including the awkward records.",
+        "Agree which historical records, attachments, and balances must move, and which remain available in a read-only archive.",
+        "Record the cut-off point and reconcile activity that occurs between the trial migration and the live changeover."
+      ],
+      "sources": [
+        { "label": "Odoo’s export and import guidance", "url": "https://www.odoo.com/documentation/19.0/applications/general/export_import_data.html" }
+      ]
+    },
+    {
+      "id": "plan-the-exit-and-recovery",
+      "title": "Test export and recovery while everyone is still available",
+      "paragraphs": [
+        "Before signing off, ask what you receive if you leave the supplier. An export of a dashboard is not the same as usable transaction data. Check whether the export includes stable references, attachments, and the relationships needed to understand the records.",
+        "Also ask the provider to explain a recovery scenario in concrete terms: which data is backed up, how often, who can restore it, how much recent work might be missing, and how long the last tested restore took. A backup file that no one has restored is weak evidence of a workable recovery process.",
+        "Clarify account ownership, administrator access, licence obligations, custom-code handover where agreed, and responsibility for updates. You do not need to operate the infrastructure yourself. You do need an understandable division of responsibilities and a route to your business records."
+      ]
+    },
+    {
+      "id": "approve-a-controlled-first-release",
+      "title": "Approve one working process before expanding",
+      "paragraphs": [
+        "Choose a first release around a complete process with a named owner, the necessary roles, representative data, and a reconciliation method. ‘Stock receipt to saleable quantity’ is a more useful boundary than ‘half the inventory module’. The release should do a small amount of real work correctly.",
+        "Define success before the pilot: the required transactions can be completed, unauthorised actions are blocked, exceptions have a clear owner, and the resulting totals reconcile. Record baseline measures such as time spent reconciling or the number of unexplained adjustments, then compare the pilot with that baseline. Do not claim a saving you have not measured.",
+        "Finally, agree what happens if the pilot fails. Preserve the previous records, identify which system is authoritative during the changeover, and define how to handle transactions already entered into the new system. A controlled transition is a business responsibility shared with the implementation team.",
+        "The right choice may be an ERP, a small integration, a custom application, or a better-controlled current process. Choose the option that can demonstrate your rules, preserve your data, and remain understandable to the people responsible for running it."
+      ],
+      "links": [
+        { "label": "Explore Adot’s custom software development service", "href": "/services/custom-software/" },
+        { "label": "Need field access? Compare website and mobile-app workflows", "href": "/blog/website-vs-mobile-app-africa/" },
+        { "label": "Discuss your operating workflow with Adot", "href": "/contact/?service=custom-software" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "title": "Website Development Cost in Ethiopia: How to Compare Quotes",
+  "seoTitle": "Website Cost in Ethiopia: Compare Quotes",
+  "slug": "website-development-cost-ethiopia",
+  "order": 1,
+  "date": "2026-10-28",
+  "category": "Website budgets",
+  "description": "Compare website development prices in Ethiopia, calculate three-year costs, and spot missing scope, renewal fees, and ownership terms before choosing a developer.",
+  "image": "/images/generated/journal-brief.jpg",
+  "imageAlt": "Collaborators reviewing paper website sketches and project requirements",
+  "sections": [
+    {
+      "id": "what-a-price-actually-tells-you",
+      "title": "What does a website actually cost in Ethiopia?",
+      "paragraphs": [
+        "Published Ethiopian website offers include a single-page package starting at ETB 30,000, five-page packages at ETB 65,000, and a corporate-site estimator spanning ETB 40,000–200,000. Amounts are in Ethiopian birr (ETB). These are individual providers’ advertised offers, checked on 28 October 2026. They are not a national price survey, interchangeable specifications, or Adot quotations.",
+        "For a useful budget, separate three things: the work needed to launch, the services needed to keep the site operating, and the responsibilities someone must carry after handover. A low initial quote can be a sensible purchase. It can also exclude the exact task you thought you were buying.",
+        "Before comparing numbers, finish this sentence: ‘A visitor should be able to find ___, understand ___, and complete ___.’ For an importer, that might mean finding product categories, checking business credentials, and sending a specific quotation request. That journey is a better starting specification than ‘a modern five-page website.’"
+      ],
+      "table": {
+        "caption": "Examples of published Ethiopian website offers, checked 28 October 2026",
+        "columns": ["Provider and offer", "Advertised price", "What the offer describes"],
+        "rows": [
+          ["Mavrosix — Starter", "From ETB 30,000", "A single-page website with launch support"],
+          ["Mavrosix — Business", "From ETB 65,000", "Up to five custom pages and a contact or booking flow"],
+          ["Adey Technologies — Basic", "ETB 65,000 per project", "Up to five pages, responsive design, and basic contact forms"],
+          ["Ampol — Business / Corporate estimator", "ETB 40,000–200,000", "A ballpark range for a multi-page corporate site; options change the scope"]
+        ]
+      },
+      "sources": [
+        { "label": "Mavrosix’s published packages", "url": "https://mavrosix.com/" },
+        { "label": "Adey Technologies’ pricing", "url": "https://adeytechnologies.com/pricing/" },
+        { "label": "Ampol’s pricing estimator", "url": "https://ampoltechethiopia.com/pricing" }
+      ]
+    },
+    {
+      "id": "write-one-comparable-scope",
+      "title": "Give every supplier the same scope",
+      "paragraphs": [
+        "Page count hides effort. Five pages written and translated by the developer are a different job from five pages built with finished text you supply. A product catalogue without checkout is a different job from a store that accepts payment, reserves stock, and handles refunds.",
+        "Count distinct page types as well as URLs. A project template used for twenty case studies might require one layout but twenty pieces of content. Ask the supplier to separate the reusable design work from content entry, writing, image preparation, and translation.",
+        "Use the same brief for each quotation. Otherwise, a price difference can simply mean one supplier has understood more of the work. Resolve missing details before asking for a discount."
+      ],
+      "bullets": [
+        "Audience and action: who visits, and what must they be able to complete?",
+        "Page types and content: list each type, the initial number of entries, and who supplies the words and images.",
+        "Languages: specify which pages need Amharic, English, or another language, and who approves each version.",
+        "Editing: identify exactly what staff must be able to change without asking a developer.",
+        "Integrations: name the destination inbox, booking system, payment provider, or other system involved.",
+        "Exclusions: write down what the first version will not include. Customer accounts and online payments are not implied by a product catalogue."
+      ],
+      "links": [
+        { "label": "Still deciding between a website and an app? Use the task-based comparison first.", "href": "/blog/website-vs-mobile-app-africa/" }
+      ]
+    },
+    {
+      "id": "price-the-operating-years",
+      "title": "Compare three years, including the quiet recurring bills",
+      "paragraphs": [
+        "A launch fee and an operating budget answer different questions. The first pays for making the site. The second keeps its domain, hosting, email, subscriptions, updates, and support available. ‘Free hosting’ is incomplete information until you know when the free period ends and what renewal costs.",
+        "Ask each supplier for a year-one, year-two, and year-three total. Break out the domain, hosting, business email, paid plugins or services, maintenance, and optional content changes. Confirm the billing currency, what taxes are included or excluded, and which third-party prices may change. Do not apply one provider’s renewal price to another provider’s package.",
+        "The example below uses invented figures to show the calculation. It is not a market estimate or an Adot price list. Assume both launch fees include the first operating year, the two proposals deliver the same scope and support, and taxes and price changes are excluded."
+      ],
+      "table": {
+        "caption": "An illustrative three-year comparison, not a quotation",
+        "columns": ["Cost period", "Quote A", "Quote B"],
+        "rows": [
+          ["Launch and first operating year", "ETB 45,000", "ETB 55,000"],
+          ["Year-two recurring services", "ETB 12,000", "ETB 7,000"],
+          ["Year-three recurring services", "ETB 12,000", "ETB 7,000"],
+          ["Three-year total", "ETB 69,000", "ETB 69,000"]
+        ]
+      }
+    },
+    {
+      "id": "account-ownership",
+      "title": "Separate ownership from access",
+      "paragraphs": [
+        "Being able to edit a page does not mean you control the domain or can move the website. Treat the domain account, hosting account, content, design files, application code, and third-party licences as separate handover questions. A website builder, a licensed theme, and commissioned custom code can have different transfer conditions.",
+        "For a generic domain such as .com, ICANN’s registrant guidance explains the importance of knowing your registrar, registration agreement, renewal pricing, and management or transfer processes. Do not assume the same agreement governs a country-code domain such as .et; ask the relevant provider for its terms.",
+        "For your quotation, ask who will be named on each account, who can recover it, and what happens when the working relationship ends. Request a list of what is exportable and what requires a continuing subscription. A good handover should be demonstrable: an authorised person in your business can sign in, find the renewal date, and obtain the agreed files or export."
+      ],
+      "sources": [
+        { "label": "ICANN’s domain registrant rights and responsibilities", "url": "https://www.icann.org/resources/pages/benefits-2013-09-16-en" }
+      ]
+    },
+    {
+      "id": "turn-promises-into-tests",
+      "title": "Turn ‘SEO’, ‘fast’, and ‘working’ into acceptance tests",
+      "paragraphs": [
+        "A feature list can look reassuring without describing what will be checked. Replace vague promises with observable outcomes. The person approving the website should be able to run these checks without understanding its code.",
+        "For search engine optimisation (SEO), request meaningful page titles, useful service content, crawlable links, a sitemap, and a demonstration that important pages are eligible for indexing. These are deliverables, not a promise of a particular Google position. Google explicitly says there is no method that automatically places a site first, and even indexing is not guaranteed.",
+        "For speed, agree on the pages, devices, connection conditions, and testing method. One screenshot of a fast desktop home page does not establish that a product page is usable on a customer’s phone. Keep performance evidence attached to the actual pages tested."
+      ],
+      "bullets": [
+        "Enquiry delivery: send a test from a phone, confirm receipt in the intended inbox, reply to the sender, and check what the visitor sees if delivery fails.",
+        "Staff editing: have the intended editor change a real service description or publish a project. Confirm whether this is included or a separately priced workflow.",
+        "Mobile use: open the menu, read the key service, use the telephone link, and complete the form without zooming to type.",
+        "Payments, if included: test an abandoned attempt, a failed attempt, and a confirmed payment; agree how the business reconciles each order.",
+        "Handover: check account access, renewal dates, operating instructions, and the agreed backup or export procedure before final acceptance."
+      ],
+      "sources": [
+        { "label": "Google’s SEO Starter Guide", "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide" }
+      ]
+    },
+    {
+      "id": "choose-what-to-pay-for",
+      "title": "Spend on the bottleneck, not the longest feature list",
+      "paragraphs": [
+        "If customers cannot understand your offer, improving content may matter more than commissioning another animation. If enquiries are being lost, form delivery and a clear response process deserve attention before adding a customer dashboard. If your staff never publish updates, a complex editing system may bring little benefit.",
+        "A template-based site can be the right purchase when its structure fits the business and the important journeys are built and tested properly. A custom design becomes more useful when a real requirement cannot be served well by that structure. The label alone tells you little about the finished result.",
+        "Treat maintenance as a responsibility, too. Ask which faults are corrected during the support period, what counts as a new request, who handles urgent failures, and what happens when an external service changes. Someone should own the task even if the site needs very little ongoing work."
+      ]
+    },
+    {
+      "id": "request-a-usable-quote",
+      "title": "A quotation request you can use today",
+      "paragraphs": [
+        "Send the following request with your scope. Ask suppliers to identify assumptions explicitly rather than filling gaps with their own interpretation. Compare their answers before comparing their totals.",
+        "A useful proposal leaves you able to explain what the business is buying, what it must supply, how the result will be accepted, and what it will cost to operate. If you cannot answer those four questions, the quotation needs another conversation."
+      ],
+      "bullets": [
+        "Please quote the attached page types, content quantities, languages, editing needs, and integrations, identifying anything excluded.",
+        "Show the launch fee and each recurring cost for years one, two, and three. State the currency, tax treatment, included periods, and prices that can change.",
+        "List the accounts, files, licences, and data we receive or control, including any restrictions on moving the website.",
+        "Propose acceptance tests for mobile use, enquiry delivery, editing, and any payment or booking flow.",
+        "Identify the content, approvals, and account setup you need from us, and connect delivery milestones to those dependencies.",
+        "Explain the included support period and how later fixes, updates, and new requests are priced."
+      ],
+      "links": [
+        { "label": "Explore Adot’s website development service", "href": "/services/web-development/" },
+        { "label": "Discuss a website scope with Adot", "href": "/contact/?service=web-development" }
+      ]
+    }
+  ]
+}

@@ -5,8 +5,12 @@
   "client": "WTB Import and Export",
   "description": "An online introduction to WTB Import and Export and its business.",
   "image": "/images/wtb.webp",
-  "imageAlt": "WTB Import and Export website screenshot from Adot\u2019s portfolio",
-  "overview": "A landing website for WTB Import and Export, featured in Adot Technologies\u2019 web development portfolio.",
+  "imageAlt": "WTB Import and Export website screenshot from Adot’s portfolio",
+  "overview": "A landing website for WTB Import and Export, featured in Adot Technologies’ web development portfolio.",
   "service": "web-development",
-  "source": "https://www.adotsystems.tech/"
+  "source": "https://www.adotsystems.tech/",
+  "scope": [
+    "Company landing website",
+    "An online introduction to WTB Import and Export"
+  ]
 }

@@ -3,9 +3,9 @@
   "shortTitle": "Websites & design",
   "order": 1,
   "description": "A strong first impression. Thoughtful design and responsive websites that make your business easy to find, understand, and connect with.",
-  "intro": "Your website should work as hard as you do. We build modern, responsive websites around your business, your audience, and what comes next.",
-  "image": "/images/web-design.webp",
-  "imageAlt": "Website design imagery from Adot Technologies",
+  "intro": "Build a website around the people who need it. From Addis Ababa, we work with businesses across Africa on clear service pages, useful content, and a responsive experience with a practical next step.",
+  "image": "/images/generated/web-development.jpg",
+  "imageAlt": "Hands typing on a laptop with a website preview and code editor",
   "icon": "globe",
   "features": [
     "Responsive design",
@@ -27,5 +27,34 @@
       "description": "Prepare for launch and support your website as it grows."
     }
   ],
-  "source": "https://www.adotsystems.tech/services/web-development"
+  "source": "https://www.adotsystems.tech/services/web-development",
+  "seoTitle": "Web Development for African Businesses",
+  "seoDescription": "Website development for businesses across Africa, from Addis Ababa. Responsive sites, clear content, enquiry workflows, and support scoped around your business.",
+  "useCases": [
+    "A company website that explains your services and makes it easy to request a quotation.",
+    "A product or project catalogue with a clear enquiry journey and an agreed editing workflow.",
+    "A redesigned website with a planned content structure, URL changes, and launch checks."
+  ],
+  "questions": [
+    {
+      "question": "Do we need an app as well as a website?",
+      "answer": "Begin with the task your customers need to complete. A website is often a useful first step for discovery and occasional enquiries. An app needs a clear advantage for a recurring task, device capability, or offline workflow. Scope that advantage before commissioning both."
+    },
+    {
+      "question": "Can our staff update the website?",
+      "answer": "Define which content staff must change and how often. A content management system, a limited editing workflow, or developer-managed updates are different options. The proposal should specify the editing method, training, account access, and any ongoing fees."
+    },
+    {
+      "question": "What should we prepare before development?",
+      "answer": "Bring the existing website address, your service and audience priorities, approved brand assets, and any available content. Identify who will approve the work and supply translations where needed. List the accounts and external services involved, without sharing passwords in the initial brief."
+    },
+    {
+      "question": "What does a payment-enabled website need?",
+      "answer": "Include order records, server-side payment verification, pending and failed states, and a way to reconcile an order when a customer loses connection. Provider approval, supported payment methods, and fees should be confirmed for the market you intend to serve."
+    }
+  ],
+  "guideSlugs": [
+    "website-development-cost-ethiopia",
+    "website-vs-mobile-app-africa"
+  ]
 }
