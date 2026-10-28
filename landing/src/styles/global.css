@@ -41,7 +41,6 @@
   --color-shade: #0008;
   --color-clear: #0000;
   --color-selection: #ff914d66;
-  --service-link-background: rgb(255 145 77 / var(--service-active, 0));
   --color-accent-ink: #292929;
   --color-focus: #ad4500;
   --color-success: #27633f;
@@ -108,10 +107,11 @@
 .adot-mark { filter: brightness(0) invert(1); }
 .hero-location { font-size: 15px; font-weight: 650; }
 .hero-reviews p { margin-top: 4px; }
-.hero-clients { flex-shrink: 0; padding-top: 10px; }
-.hero-client-logos { display: flex; align-items: center; gap: 20px; }
-.hero-client-logos img { width: auto; height: 52px; max-width: 140px; object-fit: contain; }
-.hero-clients p { margin-top: 12px; color: var(--color-muted); font-size: 13px; }
+.hero-clients { display: flex; align-items: center; gap: 14px; flex-shrink: 0; padding-top: 10px; }
+.hero-client-logos { display: flex; align-items: center; flex-shrink: 0; }
+.hero-client-logos img { width: 40px; height: 40px; border: 2px solid white; border-radius: 50%; outline: 1px solid #dededb; background: white; object-fit: contain; padding: 2px; }
+.hero-client-logos img + img { margin-left: -10px; }
+.hero-clients p { margin: 0; max-width: 165px; color: var(--color-muted); font-size: 14px; line-height: 1.5; }
 .about-images .planning-image img, .wide-photo img { object-position: center 35%; }
 .stats-grid strong { font-size: clamp(28px, 3.5vw, 46px); letter-spacing: -.055em; }
 .adot-team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 790px; }
@@ -149,7 +149,9 @@
   .reveal-enter { animation: reveal-in .65s cubic-bezier(.2,.7,.2,1) both; }
   @keyframes reveal-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 }
-.service-link { transition: transform .45s cubic-bezier(.2,.7,.2,1), background-color .3s; }
+.service-card { --service-link-background: rgb(255 145 77 / var(--service-active, 0)); }
+.service-link { max-width: 100%; white-space: normal; transition: transform .45s cubic-bezier(.2,.7,.2,1), background-color .3s; }
+.service-link svg { flex-shrink: 0; }
 .inline-link { text-decoration: underline; text-underline-offset: 4px; }
 .contact-layout aside a { display: block; }
 .form-label input:focus-visible, .form-label select:focus-visible, .form-label textarea:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 2px; }
