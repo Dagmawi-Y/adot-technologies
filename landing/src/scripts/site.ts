@@ -1,4 +1,5 @@
 import { initializeExpressiveMotion } from './motion.ts';
+import { initializeExperiments } from './experiments.ts';
 
 // Bundled scripts run once; initialize the current DOM after each Astro navigation.
 let disposePage = () => {};
@@ -14,6 +15,7 @@ function initializePage() {
   };
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   initializeExpressiveMotion(signal);
+  initializeExperiments(signal);
   const menuButton = document.querySelector<HTMLButtonElement>('[data-menu]');
   const mobileNavigation = document.querySelector<HTMLElement>('#mobile-navigation');
   function closeMenu(restoreFocus = false) {

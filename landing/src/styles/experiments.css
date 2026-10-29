@@ -1,0 +1,71 @@
+/* Experimental depth and a scroll-driven project stage, within Adot's palette. */
+.service-stage { position: relative; isolation: isolate; min-width: 0; }
+.service-stage > .service-card { height: 100%; }
+.service-sheen { display: none; }
+.service-stage::after { content: ''; position: absolute; inset: 24px 20px 0; z-index: -1; border-radius: 25px; box-shadow: 0 28px 40px -18px #0005; opacity: 0; transition: opacity 220ms ease; pointer-events: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .service-stage > .service-card { transition: transform 220ms var(--ease-out), background-color 220ms ease; }
+  .service-stage:hover::after { opacity: 1; }
+  .service-stage:hover .service-card { --service-active: 1; background: var(--color-ink); }
+  .service-stage:hover .service-hover { visibility: visible; transform: none; transition-delay: 0s; }
+  .service-stage:hover .service-default { transform: translateY(-8px); }
+  .service-stage:hover .service-link { transform: translateX(-4px); }
+  .service-sheen { display: block; position: absolute; inset: -40%; z-index: 2; pointer-events: none; background: linear-gradient(115deg, transparent 36%, #ffffff18 50%, transparent 64%); opacity: 0; transition: opacity 220ms ease; }
+  .service-stage:hover .service-sheen { opacity: 1; }
+}
+
+.projects-experiment { background: var(--color-ink); color: white; border-radius: 44px; padding-block: 80px 42px; }
+.projects-experiment h2 { font-size: clamp(34px, 4vw, 54px); max-width: 750px; }
+.projects-experiment .section-heading p, .projects-experiment .project-card p, .projects-experiment .project-meta { color: #c7c7c2; }
+.projects-experiment .project-card h3 { font-size: clamp(26px, 2.5vw, 36px); }
+.gallery-window { overflow-x: auto; overflow-y: clip; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--color-accent) #41413e; }
+.gallery-track { width: max-content; display: flex; gap: 32px; padding-inline: max(24px, calc((100vw - 1200px) / 2)); }
+.gallery-track > .project-card { flex: 0 0 auto; width: min(78vw, 850px); scroll-snap-align: center; }
+.gallery-track .project-image img { height: clamp(230px, 42svh, 480px); }
+.gallery-track .project-card p { max-width: 60ch; }
+.gallery-track .project-card { animation: none; }
+.gallery-track .project-card:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -3px; border-radius: 26px; }
+.gallery-controls { display: flex; gap: 24px; align-items: center; margin-top: 28px; }
+.gallery-hint { font-size: 13px; color: #c7c7c2; margin-right: auto; }
+.gallery-hint-pinned { display: none; }
+.gallery-count { font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gallery-progress { height: 2px; width: 150px; background: #626260; overflow: hidden; }
+.gallery-progress > span { display: block; height: 100%; background: var(--color-accent); transform-origin: left; transform: scaleX(0); }
+.gallery-buttons { display: flex; gap: 8px; }
+.gallery-buttons button { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid #8d8d87; color: white; background: transparent; border-radius: 50%; transition: transform 160ms var(--ease-out), background-color 160ms ease, color 160ms ease; }
+.gallery-buttons button:hover { background: #41413e; }
+.gallery-buttons button:disabled { opacity: .35; cursor: default; background: transparent; }
+.gallery-buttons button:first-child svg { transform: rotate(180deg); }
+.projects-experiment :focus-visible { outline-color: var(--color-accent); }
+
+@media (min-width: 1000px) and (min-height: 760px) and (prefers-reduced-motion: no-preference) {
+  .projects-experiment.is-pinned { padding: 0; border-radius: 44px; position: relative; }
+  .is-pinned .gallery-pin { position: sticky; top: 0; height: 100svh; padding-block: 125px 32px; display: flex; flex-direction: column; justify-content: center; }
+  .is-pinned .section-heading { margin-bottom: 30px; }
+  .is-pinned .gallery-window { overflow: hidden; scroll-snap-type: none; }
+  .is-pinned .gallery-track { flex-shrink: 0; }
+  .is-pinned .gallery-hint-native { display: none; }
+  .is-pinned .gallery-hint-pinned { display: inline; }
+}
+@media (max-width: 767px) {
+  .projects-experiment { border-radius: 28px; padding-block: 48px 32px; }
+  .gallery-track { gap: 18px; padding-inline: 14px; }
+  .gallery-track > .project-card { width: 86vw; }
+  .gallery-track .project-image img { height: 300px; }
+  .gallery-controls { gap: 14px; flex-wrap: wrap; }
+  .gallery-progress { width: 70px; }
+  .gallery-hint { flex-basis: calc(100% - 72px); }
+  .gallery-buttons { margin-left: auto; }
+}
+@media (min-width: 1000px) and (max-height: 850px) {
+  .is-pinned .project-image img { height: 30svh; }
+  .is-pinned h2 { font-size: 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-stage .service-card { transform: none !important; }
+  .service-sheen, .service-stage::after, .gallery-controls { display: none; }
+  .gallery-window { overflow: visible; }
+  .gallery-track { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); width: calc(100% - 48px); max-width: 1200px; margin-inline: auto; padding: 0; }
+  .gallery-track > .project-card { width: auto; }
+  .gallery-track .project-image img { height: 285px; }
+}

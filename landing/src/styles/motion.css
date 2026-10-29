@@ -212,6 +212,38 @@
 }
 
 
+.menu-glyph { display: grid; place-items: center; }
+.menu-glyph > svg { grid-area: 1 / 1; transition: opacity 160ms ease, transform 160ms var(--ease-out); }
+.menu-glyph > svg:last-child { opacity: 0; transform: rotate(-90deg); }
+.menu-button[aria-expanded='true'] .menu-glyph > svg:first-child { opacity: 0; transform: rotate(90deg); }
+.menu-button[aria-expanded='true'] .menu-glyph > svg:last-child { opacity: 1; transform: rotate(0); }
+.nav-dropdown summary > svg { transition: transform 160ms var(--ease-out); }
+.nav-dropdown[open] summary > svg { transform: rotate(180deg); }
+.nav-dropdown[data-keyboard] summary > svg, .menu-button:focus-visible .menu-glyph > svg { transition: none; }
+
+.inline-link { transition: text-decoration-color 160ms ease, color 160ms ease; }
+.form-label > span { transition: color 160ms ease; }
+.form-label:focus-within > span { color: var(--focus-color); }
+.form-label :is(input, textarea, select):focus { background: #fff9f5; border-color: var(--focus-color); }
+.form-label :is(input, textarea, select):user-invalid { border-color: var(--color-error); background: #fff7f5; }
+form[aria-busy='true'] button[type='submit'] > svg { visibility: hidden; }
+form[aria-busy='true'] button[type='submit']::after {
+  content: ''; position: absolute; right: 23px; top: calc(50% - 7px);
+  width: 14px; height: 14px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%;
+  animation: enquiry-pending 700ms linear infinite;
+}
+@keyframes enquiry-pending { to { transform: rotate(360deg); } }
+.gallery-buttons button { transition: transform 160ms var(--ease-out), background-color 160ms ease, color 160ms ease; }
+.gallery-buttons button > svg { transition: transform 160ms var(--ease-out); }
+.gallery-buttons button:active:not(:disabled) { transform: scale(0.94); }
+.gallery-buttons button:focus-visible, .gallery-buttons button:focus-visible > svg { transition: none; }
+@media (hover: hover) and (pointer: fine) {
+  .inline-link:hover { color: var(--focus-color); text-decoration-color: var(--color-accent); }
+  .gallery-buttons button:hover:not(:disabled) { background: var(--color-accent); color: var(--color-ink); }
+  .gallery-buttons button:first-child:hover:not(:disabled) > svg { transform: rotate(180deg) translateX(3px); }
+  .gallery-buttons button:last-child:hover:not(:disabled) > svg { transform: translateX(3px); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .faq-item::details-content, .nav-dropdown::details-content { transition: none !important; }
   .button-icon-copy { display: none; }

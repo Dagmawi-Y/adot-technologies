@@ -14,7 +14,7 @@ const active = (href: string) => path.startsWith(href) ? 'page' : undefined;
       <details class="nav-dropdown"><summary data-active={path.startsWith('/services/')} >Services<Icon name="chevron" size={12} /></summary><div class="dropdown-panel"><a href="/services/" aria-current={path === '/services/' ? 'page' : undefined}>Explore our services</a>{services.map(label => <a href={`/services/${label.toLowerCase().replaceAll(' ', '-')}/`}>{label}</a>)}</div></details>
       {links.map(link => <a href={link.href} aria-current={active(link.href)}>{link.label}</a>)}
     </nav>
-    <div class="flex items-center gap-2"><a class="call-button" href={`tel:${site.phoneHref}`} aria-label="Call Adot Technologies"><Icon name="call" size={17} /></a><a class="nav-quote" href="/contact/">Start a project</a><button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-menu><Icon name="menu" /></button></div>
+    <div class="flex items-center gap-2"><a class="call-button" href={`tel:${site.phoneHref}`} aria-label="Call Adot Technologies"><Icon name="call" size={17} /></a><a class="nav-quote" href="/contact/">Start a project</a><button class="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-menu><span class="menu-glyph" aria-hidden="true"><Icon name="menu" /><Icon name="close" /></span></button></div>
   </div>
   <nav id="mobile-navigation" class="mobile-navigation" aria-label="Mobile navigation" hidden>
     <a href="/services/">Services<Icon name="arrow" size={16} /></a>{links.map(link => <a href={link.href} aria-current={active(link.href)}>{link.label}<Icon name="arrow" size={16} /></a>)}

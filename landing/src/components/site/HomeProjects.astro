@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProjectCard from './ProjectCard.astro';
+import LinkButton from './LinkButton.astro';
+import Icon from './Icon.astro';
+interface Props { projects: CollectionEntry<'projects'>[]; }
+const { projects } = Astro.props;
+---
+<section id="projects" class="section projects-experiment" data-gallery>
+  <div class="gallery-pin">
+    <div class="site-container section-heading heading-row">
+      <div><h2>Bold ideas. Brought to life.</h2><p>A few of the websites and systems in our portfolio.</p></div>
+      <LinkButton href="/projects/" variant="white">See our work</LinkButton>
+    </div>
+    <div class="gallery-window" tabindex="0" role="region" aria-label="Adot project gallery">
+      <div class="gallery-track">{projects.map(project => <ProjectCard project={project} large />)}</div>
+    </div>
+    <div class="site-container gallery-controls">
+      <p class="gallery-hint"><span class="gallery-hint-native">Swipe or scroll sideways to explore</span><span class="gallery-hint-pinned">Keep scrolling to explore</span></p>
+      <span class="gallery-count" aria-hidden="true"><span data-gallery-index>01</span> / {String(projects.length).padStart(2, '0')}</span>
+      <div class="gallery-progress" aria-hidden="true"><span></span></div>
+      <div class="gallery-buttons" hidden><button type="button" data-gallery-prev aria-label="Previous project"><Icon name="arrow" /></button><button type="button" data-gallery-next aria-label="Next project"><Icon name="arrow" /></button></div>
+    </div>
+  </div>
+</section>

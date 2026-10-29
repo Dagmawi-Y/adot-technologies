@@ -53,6 +53,21 @@ export function initializeExpressiveMotion(pageSignal: AbortSignal) {
       cleanups.push(clear);
     }
 
+    document.querySelectorAll<HTMLElement>('.service-stage').forEach(stage => {
+      const card = stage.querySelector<HTMLElement>('.service-card');
+      const sheen = stage.querySelector<HTMLElement>('.service-sheen');
+      if (!card || !sheen) return;
+      track(stage, (x, y, rect) => {
+        const dx = Math.max(-1, Math.min(1, x / rect.width * 2 - 1));
+        const dy = Math.max(-1, Math.min(1, y / rect.height * 2 - 1));
+        card.style.transform = `perspective(900px) rotateX(${-dy * 7}deg) rotateY(${dx * 9}deg) translateZ(12px)`;
+        sheen.style.transform = `translateX(${dx * 35}%)`;
+      }, () => {
+        card.style.removeProperty('transform');
+        sheen.style.removeProperty('transform');
+      });
+    });
+
     document.querySelectorAll<HTMLElement>('.button').forEach(button => {
       const label = button.querySelector<HTMLElement>('.button-label');
       const icon = button.querySelector<HTMLElement>('.button-icon');
