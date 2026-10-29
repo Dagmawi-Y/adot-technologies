@@ -3,4 +3,4 @@ import Icon from './Icon.astro';
 interface Props { title: string; description: string; backHref?: string; backLabel?: string; }
 const { title, description, backHref, backLabel } = Astro.props;
 ---
-<section class="site-container page-intro">{backHref && <a class="text-link" href={backHref}><Icon name="arrow" size={15} />{backLabel}</a>}<h1>{title}</h1><p>{description}</p></section>
+<section class="site-container page-intro">{backHref && <a class="text-link" href={backHref}><Icon name="arrow" size={15} />{backLabel}</a>}<h1><span class="page-title-line">{title}</span></h1><p>{description}</p></section>

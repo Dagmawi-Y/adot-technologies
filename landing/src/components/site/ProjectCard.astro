@@ -5,4 +5,4 @@ import Icon from './Icon.astro';
 interface Props { project: CollectionEntry<'projects'>; }
 const { project: { id, data } } = Astro.props;
 ---
-<a class="project-card" href={`/projects/${id}/`} data-reveal><div class="project-image"><ResponsiveImage src={data.image} alt={data.imageAlt} width="1200" height="900" loading="lazy" sizes="(min-width: 1100px) 384px, (min-width: 768px) 30vw, calc(100vw - 28px)" /><span class="round-arrow"><Icon /></span></div><div class="project-meta"><span>{data.category}</span><span>Adot Technologies</span></div><h3>{data.title}</h3><p>{data.description}</p></a>
+<a class="project-card" href={`/projects/${id}/`} data-reveal><div class="project-image"><ResponsiveImage src={data.image} alt={data.imageAlt} width="1200" height="900" loading="lazy" sizes="(min-width: 1100px) 384px, (min-width: 768px) 30vw, calc(100vw - 28px)" /><span class="round-arrow"><Icon /></span><span class="project-cursor" aria-hidden="true">View project<Icon size={16} /></span></div><div class="project-meta"><span>{data.category}</span><span>Adot Technologies</span></div><h3>{data.title}</h3><p>{data.description}</p></a>

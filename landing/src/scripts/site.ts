@@ -1,3 +1,5 @@
+import { initializeExpressiveMotion } from './motion.ts';
+
 // Bundled scripts run once; initialize the current DOM after each Astro navigation.
 let disposePage = () => {};
 
@@ -11,6 +13,7 @@ function initializePage() {
     disposers.forEach(dispose => dispose());
   };
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  initializeExpressiveMotion(signal);
   const menuButton = document.querySelector<HTMLButtonElement>('[data-menu]');
   const mobileNavigation = document.querySelector<HTMLElement>('#mobile-navigation');
   function closeMenu(restoreFocus = false) {
@@ -63,7 +66,7 @@ function initializePage() {
   if ('IntersectionObserver' in window && !reducedMotion.matches) {
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      entry.target.classList.add('reveal-enter');
+      if (entry.boundingClientRect.top >= 0) entry.target.classList.add('reveal-enter');
       observer.unobserve(entry.target);
     }), { threshold: 0.08 });
     document.querySelectorAll<HTMLElement>('[data-reveal]').forEach(element => observer.observe(element));
@@ -76,11 +79,18 @@ function initializePage() {
       frame = undefined;
       if (reducedMotion.matches || document.hidden) { parallax.style.transform = ''; return; }
       const rect = parallax.parentElement?.getBoundingClientRect();
-      if (rect && rect.bottom > 0 && rect.top < window.innerHeight) parallax.style.transform = `translateY(${Math.max(-22, Math.min(22, -rect.top * .045))}px)`;
+      if (!rect || rect.bottom <= 0 || rect.top >= window.innerHeight) return;
+      const height = rect.bottom - rect.top;
+      const progress = (window.innerHeight / 2 - (rect.top + height / 2)) / ((window.innerHeight + height) / 2);
+      const travel = Math.min(72, height * 0.12);
+      parallax.style.transform = `translateY(${Math.max(-1, Math.min(1, progress)) * travel}px)`;
     };
-    window.addEventListener('scroll', () => { frame ??= requestAnimationFrame(update); }, { passive: true, signal });
+    const scheduleUpdate = () => { frame ??= requestAnimationFrame(update); };
+    window.addEventListener('scroll', scheduleUpdate, { passive: true, signal });
+    window.addEventListener('resize', scheduleUpdate, { signal });
+    document.addEventListener('visibilitychange', scheduleUpdate, { signal });
     disposers.push(() => { if (frame !== undefined) cancelAnimationFrame(frame); });
-    reducedMotion.addEventListener('change', update, { signal });
+    reducedMotion.addEventListener('change', scheduleUpdate, { signal });
     update();
   }
 

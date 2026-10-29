@@ -1,0 +1,228 @@
+/* A composed entrance, tactile controls, and a portfolio that responds to exploration. */
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-fast: 160ms;
+  --motion-standard: 220ms;
+}
+
+.button, .nav-quote, .call-button, .menu-button {
+  transition: transform var(--motion-fast) var(--ease-out), background-color var(--motion-fast) ease, color var(--motion-fast) ease;
+}
+.button svg, .text-link svg, .round-arrow svg, .service-link svg {
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+.button:hover, .project-card:hover img { transform: none; }
+.button:active, .nav-quote:active, .call-button:active, .menu-button:active {
+  transform: scale(0.97);
+}
+.button:disabled { transform: none; }
+.button:focus-visible:active, .nav-quote:focus-visible:active,
+.call-button:focus-visible:active, .menu-button:focus-visible:active { transform: none; transition: none; }
+
+.desktop-nav > a::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-fast) var(--ease-out);
+}
+
+.project-image img, .blog-image img, .team-portrait img {
+  transition: transform 280ms var(--ease-out);
+}
+.blog-arrow { transition: background-color var(--motion-fast) ease, transform var(--motion-fast) var(--ease-out); }
+.blog-card-link:is(:hover, :focus-visible) .blog-arrow { transform: none; }
+
+/* Keep the existing card treatment, with less travel and quicker responses. */
+.service-card { transition: background-color var(--motion-standard) ease; }
+.service-default { transform: none; transition: opacity var(--motion-fast) ease, transform var(--motion-standard) var(--ease-out); }
+.service-hover { transform: translateY(8px); transition: opacity var(--motion-fast) ease, transform var(--motion-standard) var(--ease-out), visibility 0s var(--motion-fast); }
+.service-card .service-link { transform: none; transition: transform var(--motion-standard) var(--ease-out), background-color var(--motion-fast) ease; }
+.service-card::before, .service-card::after { transition-duration: var(--motion-standard); }
+.service-card:focus-within :is(.service-default, .service-hover, .service-link) { transform: none; transition: none; }
+.service-card:focus-within { transition: none; }
+.blog-card-link:focus-visible .blog-arrow { transition: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { transform: translateY(-1px); }
+  .button:hover svg, .project-card:hover .round-arrow svg { transform: translate(2px, -2px); }
+  .text-link:hover svg { transform: translateX(-2px); }
+  .button:active { transform: scale(0.97); }
+  .desktop-nav > a:not([aria-current]):hover::after { transform: scaleX(1); }
+  .project-card:hover .project-image img, .blog-card-link:hover .blog-image img, .team-card:hover .team-portrait img { transform: scale(1.025); }
+  .blog-card-link:hover .blog-arrow { transform: rotate(45deg); }
+  .service-card:hover .service-default { transform: translateY(-8px); }
+  .service-card:hover .service-hover { transform: none; transition-delay: 0s; }
+  .service-card:hover .service-link { transform: translateX(-4px); }
+  .service-card:hover .service-link svg { transform: translateX(2px); }
+}
+
+/* Native disclosures retain their semantics and keyboard behavior. */
+.faq-item summary svg { transition: transform var(--motion-fast) var(--ease-out); }
+.faq-item::details-content {
+  opacity: 0;
+  transition: opacity 180ms var(--ease-out), content-visibility 180ms allow-discrete;
+}
+.faq-item[open]::details-content { opacity: 1; }
+@supports (interpolate-size: allow-keywords) {
+  .faq-item { interpolate-size: allow-keywords; }
+  .faq-item::details-content {
+    height: 0;
+    overflow: clip;
+    transition: height 180ms var(--ease-out), opacity 180ms var(--ease-out), content-visibility 180ms allow-discrete;
+  }
+  .faq-item[open]::details-content { height: auto; }
+}
+.faq-item:has(summary:focus-visible)::details-content,
+.faq-item summary:focus-visible svg { transition: none; }
+
+.mobile-navigation {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), display 180ms allow-discrete;
+}
+.mobile-navigation[hidden] { opacity: 0; transform: translateY(-6px); pointer-events: none; }
+.header-wrap:has([data-menu]:focus-visible) .mobile-navigation { transition: none; }
+@starting-style {
+  .mobile-navigation:not([hidden]) { opacity: 0; transform: translateY(-6px); }
+}
+.form-label :is(input, select, textarea) { transition: border-color var(--motion-fast) ease, background-color var(--motion-fast) ease; }
+.form-feedback:not(:empty) { transition: opacity var(--motion-fast) ease; }
+@starting-style { .form-feedback:not(:empty) { opacity: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-enter { animation: section-arrive 420ms var(--ease-out) backwards; }
+  .reveal-enter:focus-within { animation: none; }
+  :is(.service-grid, .project-grid, .blog-grid, .values-grid, .process-grid, .team-grid, .stats-grid) > .reveal-enter:nth-child(2) { animation-delay: 50ms; }
+  :is(.service-grid, .project-grid, .blog-grid, .values-grid, .process-grid, .team-grid, .stats-grid) > .reveal-enter:nth-child(n+3) { animation-delay: 100ms; }
+  @keyframes section-arrive {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+.hero-line { display: block; overflow: clip; padding-bottom: .13em; margin-bottom: -.13em; }
+.hero-photo > img[data-parallax] { height: 128%; top: -14%; }
+.hero-line > span, .page-title-line { display: block; }
+.page-intro h1 { overflow: clip; padding-bottom: .13em; }
+
+.button { position: relative; isolation: isolate; overflow: hidden; max-width: 100%; white-space: normal; }
+.button-label { min-width: 0; }
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--button-hover-surface, var(--color-accent));
+  transform: translateY(105%);
+  transition: transform 240ms var(--ease-out);
+}
+.button-orange { --button-hover-surface: var(--color-ink); }
+.button-label, .button-icon { transition: translate 240ms var(--ease-out); }
+.button-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+}
+.button-icon > svg { grid-area: 1 / 1; transition: transform 240ms var(--ease-out); }
+.button-icon > .button-icon-copy { transform: translate(-130%, 130%); }
+
+.project-cursor { display: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .button:hover::before { transform: translateY(0); }
+  .button.button-orange:hover { color: white; }
+  .button.button-dark:hover { color: var(--color-ink); }
+  .button:hover .button-icon > svg:first-child { transform: translate(130%, -130%); }
+  .button:hover .button-icon > .button-icon-copy { transform: none; }
+  .project-image.has-pointer-cue.pointer-inside { cursor: none; }
+  .has-pointer-cue .project-cursor {
+    position: absolute;
+    inset: 0 auto auto 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    padding: 13px 18px;
+    border-radius: 100px;
+    background: var(--color-ink);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+    transition: opacity 160ms ease, transform 220ms var(--ease-out);
+  }
+  .has-pointer-cue.pointer-inside .project-cursor { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  .has-pointer-cue .round-arrow { transition: opacity var(--motion-fast) ease; }
+  .has-pointer-cue.pointer-inside .round-arrow { opacity: 0; }
+  .project-card:hover .has-pointer-cue img { transform: scale(1.055); }
+  .has-pointer-cue img { transition: transform 350ms var(--ease-out), translate 280ms var(--ease-out); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-line > span { animation: headline-arrive 700ms var(--ease-out) backwards; }
+  .hero-line:nth-child(2) > span { animation-delay: 80ms; }
+  .hero-clients { animation: supporting-arrive 600ms var(--ease-out) 140ms backwards; }
+  .hero-photo > img { animation: scene-settle 800ms var(--ease-out) backwards; }
+  .hero-note > p, .hero-note > span { animation: supporting-arrive 600ms var(--ease-out) 100ms backwards; }
+  .hero-tags > span { animation: supporting-arrive 450ms var(--ease-out) 180ms backwards; }
+  .hero-tags > span:nth-child(2) { animation-delay: 240ms; }
+  .hero-tags > span:nth-child(3) { animation-delay: 300ms; }
+  .hero-tags > span:nth-child(4) { animation-delay: 360ms; }
+  .hero-tags > span:nth-child(5) { animation-delay: 420ms; }
+  .contact-seal { animation: supporting-arrive 600ms var(--ease-out) 260ms backwards; }
+  .page-title-line { animation: headline-arrive 600ms var(--ease-out) backwards; }
+  .page-intro > p { animation: supporting-arrive 500ms var(--ease-out) 100ms backwards; }
+
+  @keyframes headline-arrive {
+    from { transform: translateY(110%); }
+    to { transform: translateY(0); }
+  }
+  @keyframes supporting-arrive {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scene-settle {
+    from { scale: 1.06; }
+    to { scale: 1; }
+  }
+
+  @supports (animation-timeline: view()) {
+    :is(.craft-image > img, .planning-image, .wide-photo, .project-screenshot) {
+      animation: image-uncover linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+    @keyframes image-uncover {
+      from { clip-path: inset(12% 3% 12% 3% round 26px); transform: translateY(24px) scale(0.97); }
+      to { clip-path: inset(0% 0% 0% 0% round 26px); transform: translateY(0) scale(1); }
+    }
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item::details-content, .nav-dropdown::details-content { transition: none !important; }
+  .button-icon-copy { display: none; }
+  .button-label, .button-icon { translate: none !important; }
+  .hero-photo > img { scale: none !important; }
+  .hero-photo > img[data-parallax] { height: 110%; top: -5%; }
+  .button, .button:hover, .button:active,
+  .nav-quote:active, .call-button:active, .menu-button:active,
+  .mobile-navigation, .mobile-navigation[hidden],
+  .service-card :is(.service-default, .service-hover, .service-link, .service-link svg),
+  .project-card .project-image img, .blog-card .blog-image img, .team-card .team-portrait img,
+  .button svg, .text-link svg, .round-arrow svg, .blog-card-link .blog-arrow { transform: none !important; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

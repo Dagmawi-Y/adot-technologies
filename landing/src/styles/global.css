@@ -126,7 +126,6 @@
 .service-grid, .project-grid, .blog-grid, .about-images, .detail-hero { min-width: 0; }
 .service-grid > *, .project-grid > *, .blog-grid > * { min-width: 0; }
 .noscript-nav { padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; background: var(--color-panel); }
-.nav-dropdown { --ease-out: cubic-bezier(0.23, 1, 0.32, 1); }
 .nav-dropdown::details-content { transition: content-visibility 160ms allow-discrete; }
 .nav-dropdown .dropdown-panel {
   opacity: 0;
@@ -145,10 +144,6 @@
   .nav-dropdown .dropdown-panel { transform: none; }
 }
 [data-reveal] { opacity: 1; }
-@media (prefers-reduced-motion: no-preference) {
-  .reveal-enter { animation: reveal-in .65s cubic-bezier(.2,.7,.2,1) both; }
-  @keyframes reveal-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-}
 .service-card { --service-link-background: rgb(255 145 77 / var(--service-active, 0)); }
 .service-link { max-width: 100%; white-space: normal; transition: transform .45s cubic-bezier(.2,.7,.2,1), background-color .3s; }
 .service-link svg { flex-shrink: 0; }
