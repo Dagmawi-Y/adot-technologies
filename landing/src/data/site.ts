@@ -1,7 +1,8 @@
 export const site = {
   name: 'Adot Technologies',
+  shortName: 'Adot',
   tagline: 'Powering Bold Dreams.',
-  description: 'Websites, mobile apps, and custom software for businesses across Africa. Adot Technologies is based in Addis Ababa, Ethiopia.',
+  description: 'Adot Technologies is a software company in Addis Ababa, Ethiopia. We build websites, mobile apps, and custom software for businesses across Africa.',
   url: 'https://www.adotsystems.tech',
   email: 'contact@adotsystems.tech',
   phone: '+251 94 843 5765',
@@ -28,6 +29,7 @@ export const clients = [
 ];
 
 export const questions = [
+  { question: 'Where is Adot Technologies based?', answer: 'Adot Technologies is a software company based at City Point Hub, 22 Mazoria, Addis Ababa, Ethiopia. We build websites, mobile apps, and custom software for teams across Africa.' },
   { question: 'What can Adot help us build?', answer: 'We design and develop websites, mobile apps, and custom software. Whether you need a new online presence or a tool for your business, tell us what you have in mind.' },
   { question: 'Who do you work with?', answer: 'Adot works with startups, small and medium businesses, educational institutions, and government agencies. Our team is based in Addis Ababa, Ethiopia.' },
   { question: 'How do we start a project?', answer: 'Send us a few details through our contact form, email us, or give us a call. We will discuss your goals and the scope of the work before planning the next steps.' },

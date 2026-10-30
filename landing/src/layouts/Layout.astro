@@ -15,7 +15,9 @@ const { title = 'Web, App & Software Development in Africa', description = site.
 const canonical = canonicalUrl(Astro.url.pathname);
 const socialImage = await getImage({ src: imageAsset(image), width: 1200, height: 630, fit: 'cover', format: 'jpeg', quality: 80 });
 const socialImageUrl = new URL(socialImage.src, site.url).href;
-const pageTitle = `${Astro.props.seoTitle ?? title} | ${site.name}`;
+const pageTitle = Astro.url.pathname === '/'
+  ? `${site.name} | ${Astro.props.seoTitle ?? title}`
+  : `${Astro.props.seoTitle ?? title} | ${site.name}`;
 const { type = 'website' } = Astro.props;
 ---
 <!doctype html>

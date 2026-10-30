@@ -40,17 +40,32 @@ for (const [route, { html }] of pages) {
   assert.ok(socialImage?.content.startsWith(origin + '/_astro/'), 'Optimized social image' + context);
   const schema = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].flatMap(([, value]) => { const data = JSON.parse(value); return data['@graph'] ?? [data]; });
   const business = schema.find(item => item['@type'] === 'LocalBusiness');
+  assert.equal(business?.name, 'Adot Technologies', 'Consistent company identity' + context);
+  assert.equal(business.alternateName, 'Adot', 'Only the genuine short name is an alias' + context);
+  assert.equal(business.url, origin + '/', 'Company canonical URL' + context);
+  assert.equal(business.address.addressCountry, 'ET', 'Ethiopian company address' + context);
   assert.equal(business?.address.addressLocality, 'Addis Ababa', 'Real business location' + context);
   assert.equal(business.areaServed.name, 'Africa', 'Africa service area' + context);
   assert.equal(business.openingHoursSpecification[0].opens, '08:30');
   assert.equal(business.openingHoursSpecification[0].closes, '17:30');
   assert.equal(business.telephone, '+251948435765');
-  if (route === '/') assert.ok(schema.find(item => item['@type'] === 'WebSite'), 'Homepage site identity');
+  if (route === '/') {
+    const website = schema.find(item => item['@type'] === 'WebSite');
+    assert.equal(website?.name, business.name, 'Homepage site identity');
+    assert.ok(title.startsWith('Adot Technologies | ') && title.includes('Ethiopia'), 'Brand and country in homepage title');
+    assert.ok(html.includes('Adot Technologies builds websites, mobile apps, and custom software in Addis Ababa, Ethiopia'), 'Visible brand, services and location');
+  }
   else {
     const crumbs = schema.find(item => item['@type'] === 'BreadcrumbList');
     assert.equal(crumbs?.itemListElement.at(-1).item, origin + route, 'Breadcrumb target' + context);
   }
   if (/^\/services\/[^/]+\/$/.test(route)) assert.ok(schema.find(item => item['@type'] === 'Service'), 'Service schema' + context);
+  if (/^\/projects\/[^/]+\/$/.test(route)) {
+    const project = schema.find(item => item['@type'] === 'CreativeWork');
+    assert.equal(project?.creator['@id'], business['@id'], 'Project attributed to Adot' + context);
+    assert.equal(project.mainEntityOfPage['@id'], origin + route, 'Project page identity' + context);
+    assert.ok(pages.has(new URL(project.about.url).pathname), 'Project links to an existing service' + context);
+  }
   if (/^\/blog\/[^/]+\/$/.test(route)) {
     const article = schema.find(item => item['@type'] === 'BlogPosting');
     assert.equal(article?.mainEntityOfPage['@id'], origin + route, 'Article identity' + context);

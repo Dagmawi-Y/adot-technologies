@@ -22,14 +22,14 @@ export function pageSchema(path: string, title: string, description: string, ima
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'LocalBusiness', '@id': organizationId, name: site.name, alternateName: 'Adot', url: canonicalUrl('/'),
+        '@type': 'LocalBusiness', '@id': organizationId, name: site.name, alternateName: site.shortName, url: canonicalUrl('/'),
         description: site.description, logo: new URL('/images/adot-logo.png?v=2', site.url).href,
         image, email: site.email, telephone: site.phoneHref, address: site.postalAddress,
         areaServed: { '@type': 'Continent', name: 'Africa' },
         openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: site.hours.opens, closes: site.hours.closes }],
         contactPoint: [{ '@type': 'ContactPoint', telephone: site.phoneHref, email: site.email, contactType: 'sales', availableLanguage: ['English'], areaServed: { '@type': 'Continent', name: 'Africa' } }],
       },
-      ...(parts.length === 0 ? [{ '@type': 'WebSite', '@id': websiteId, name: site.name, alternateName: 'Adot', url, publisher: { '@id': organizationId }, inLanguage: 'en' }] : []),
+      ...(parts.length === 0 ? [{ '@type': 'WebSite', '@id': websiteId, name: site.name, alternateName: site.shortName, url, publisher: { '@id': organizationId }, inLanguage: 'en' }] : []),
       {
         '@type': type, '@id': url, url, name: title, description, inLanguage: 'en',
         isPartOf: { '@id': websiteId }, about: { '@id': organizationId },
