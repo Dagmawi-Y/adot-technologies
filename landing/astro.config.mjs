@@ -2,9 +2,10 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
-import cloudflare from '@astrojs/cloudflare';
 import sitemap from '@astrojs/sitemap';
 import { readdirSync, readFileSync } from 'node:fs';
+
+import vercel from '@astrojs/vercel';
 
 // Publication dates belong to the content, rather than the build timestamp.
 const articleDates = Object.fromEntries(readdirSync(new URL('./src/content/articles/', import.meta.url))
@@ -17,7 +18,7 @@ const articleDates = Object.fromEntries(readdirSync(new URL('./src/content/artic
 export default defineConfig({
   site: 'https://www.adotsystems.tech',
   trailingSlash: 'always',
-  adapter: cloudflare({ imageService: 'compile', prerenderEnvironment: 'node' }),
+  adapter: vercel(),
   integrations: [react(), sitemap({
     filter: page => !/^\/(?:404(?:\.html|\/)?|api\/)/.test(new URL(page).pathname),
     serialize: item => {
