@@ -1,0 +1,93 @@
+/* Brand primitives. Change the palette here; components consume semantic roles below. */
+:root {
+  --brand-terracotta: #c05230;
+  --brand-rust: #923d26;
+  --brand-peach: #efd4c4;
+  --brand-cream: #fcf3ee;
+  --brand-sage: #727a62;
+}
+
+/* Keep every token available to Astro, plain CSS, and Tailwind utilities. */
+@theme static {
+  --color-white: #fff;
+  --color-ink: #292929;
+  --color-muted: #626260;
+  --color-surface: var(--color-white);
+  --color-panel: #f5f5f4;
+  --color-line: #dededb;
+  --color-accent: var(--brand-terracotta);
+  --color-accent-ink: var(--color-white);
+  --color-accent-hover: var(--brand-rust);
+  --color-accent-soft: var(--brand-peach);
+  --color-action: var(--brand-rust);
+  --color-action-hover: color-mix(in srgb, var(--brand-rust) 78%, var(--color-inverse));
+  --color-action-ink: var(--color-white);
+  --color-link: var(--brand-rust);
+  --color-focus: var(--brand-rust);
+  --color-focus-surface: var(--brand-cream);
+  --color-selection: color-mix(in srgb, var(--brand-terracotta) 35%, transparent);
+  --color-info: var(--brand-terracotta);
+  --color-calm: var(--brand-sage);
+  --color-inverse: var(--color-ink);
+  --color-on-inverse: var(--color-white);
+  --color-on-inverse-muted: #c7c7c2;
+  --color-inverse-raised: #41413e;
+  --color-inverse-line: #484843;
+  --color-success: #27633f;
+  --color-error: #a32c19;
+  --color-error-hover: color-mix(in srgb, var(--color-error) 85%, black);
+  --color-error-surface: #fff7f5;
+  --color-shade: #0008;
+  --color-clear: #0000;
+  --color-shadow: #0005;
+  --color-sheen: #ffffff18;
+  --color-background: var(--color-surface);
+  --color-foreground: var(--color-ink);
+  --color-primary: var(--color-ink);
+  --color-primary-foreground: var(--color-white);
+  --color-secondary: var(--color-panel);
+  --color-secondary-foreground: var(--color-ink);
+  --color-border: var(--color-line);
+  --color-ring: var(--color-focus);
+}
+
+:root {
+  --focus-color: var(--color-focus);
+
+  /* Compatibility aliases for the existing reference stylesheet. */
+  --reference-color-1: #fff;
+  --reference-color-2: #292929;
+  --reference-color-3: #00000006;
+  --reference-color-4: #dededb;
+  --reference-color-5: #41413e;
+  --reference-color-6: #51514f;
+  --reference-color-7: #0002;
+  --reference-color-8: var(--color-accent-hover);
+  --reference-color-9: #8d8d87;
+  --reference-color-10: #0003;
+  --reference-color-11: #dbddd9;
+  --reference-color-12: #0000;
+  --reference-color-13: #0008;
+  --reference-color-14: #24242455;
+  --reference-color-15: #ffffffb3;
+  --reference-color-16: #41413d;
+  --reference-color-17: #d3d3cf;
+  --reference-color-18: #e9e9e6;
+  --reference-color-19: #b5b5b0;
+  --reference-color-20: #d4d4d0;
+  --reference-color-21: #393937;
+  --reference-color-22: #33332f;
+  --reference-color-23: #58433333;
+  --reference-color-24: #37332c;
+  --reference-color-25: #c8c8c3;
+  --reference-color-26: #ccc;
+  --reference-color-27: #d6d6d2;
+  --reference-color-28: #b6b6b0;
+  --reference-color-29: #a5a5a0;
+  --reference-color-30: #c7c7c2;
+  --reference-color-31: #dcdcd5;
+  --reference-color-32: #484843;
+  --reference-color-33: var(--color-link);
+  --reference-color-34: #b8b8b1;
+  --reference-color-35: var(--color-link);
+}

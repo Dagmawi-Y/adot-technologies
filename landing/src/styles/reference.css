@@ -79,7 +79,7 @@ display:block}
 background:var(--reference-color-5)}
 .call-button{
 background:var(--color-accent);
-color:var(--reference-color-2);
+color:var(--color-accent-ink);
 border-radius:50%;
 place-items:center;
 width:37px;
@@ -333,15 +333,15 @@ transition:background .2s,transform .2s;
 display:inline-flex}
 .button:hover{
 transform:translateY(-2px)}
-.button-orange{
+.button-accent{
 background:var(--color-accent);
-color:var(--reference-color-2)}
-.button-orange:hover{
+color:var(--color-accent-ink)}
+.button-accent:hover{
 background:var(--reference-color-8)}
-.button-dark{
+.button-primary{
 color:var(--reference-color-1);
 background:var(--reference-color-2)}
-.button-dark:hover{
+.button-primary:hover{
 background:var(--reference-color-16)}
 .button-white{
 color:var(--reference-color-2);
@@ -355,7 +355,7 @@ border:1px solid var(--reference-color-19)}
 background:var(--reference-color-18)}
 .button-dot{
 background:var(--color-accent);
-color:var(--reference-color-2);
+color:var(--color-accent-ink);
 border-radius:50%;
 place-items:center;
 width:21px;
@@ -394,6 +394,7 @@ align-items:center;
 transition:opacity .3s,transform .45s cubic-bezier(.2,.7,.2,1);
 display:flex}
 .service-icon{
+color:var(--color-accent-ink);
 background:var(--color-accent);
 border-radius:50%;
 place-items:center;
@@ -642,7 +643,7 @@ max-width:630px;
 margin-inline:auto}
 .small-marker{
 background:var(--color-accent);
-color:var(--reference-color-2);
+color:var(--color-accent-ink);
 border-radius:100px;
 place-items:center;
 width:30px;
@@ -836,7 +837,7 @@ padding:32px}
 .value-icon{
 width:44px;
 height:44px;
-color:var(--color-ink);
+color:var(--color-accent-ink);
 background:var(--color-accent);
 border-radius:50%;
 place-items:center;
@@ -1051,6 +1052,7 @@ height:36px;
 transition:background-color .25s,transform .3s;
 display:grid}
 .blog-card-link:is(:hover,:focus-visible) .blog-arrow{
+color:var(--color-accent-ink);
 background:var(--color-accent);
 transform:rotate(45deg)}
 .blog-card-link:focus-visible{
@@ -1075,6 +1077,7 @@ max-width:980px}
 .article-intro>p{
 max-width:760px}
 .article-category{
+color:var(--color-accent-ink);
 background:var(--color-accent);
 border-radius:100px;
 width:fit-content;

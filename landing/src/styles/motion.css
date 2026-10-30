@@ -117,11 +117,12 @@
   inset: 0;
   z-index: -1;
   border-radius: inherit;
-  background: var(--button-hover-surface, var(--color-accent));
+  background: var(--button-hover-surface, var(--color-accent-soft));
   transform: translateY(105%);
   transition: transform 240ms var(--ease-out);
 }
-.button-orange { --button-hover-surface: var(--color-ink); }
+.button-accent { --button-hover-surface: var(--color-inverse); }
+.button-primary { --button-hover-surface: var(--color-accent); }
 .button-label, .button-icon { transition: translate 240ms var(--ease-out); }
 .button-icon {
   position: relative;
@@ -138,8 +139,8 @@
 .project-cursor { display: none; }
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .button:hover::before { transform: translateY(0); }
-  .button.button-orange:hover { color: white; }
-  .button.button-dark:hover { color: var(--color-ink); }
+  .button.button-accent:hover { color: var(--color-white); }
+  .button.button-primary:hover { color: var(--color-accent-ink); }
   .button:hover .button-icon > svg:first-child { transform: translate(130%, -130%); }
   .button:hover .button-icon > .button-icon-copy { transform: none; }
   .project-image.has-pointer-cue.pointer-inside { cursor: none; }
@@ -154,7 +155,7 @@
     padding: 13px 18px;
     border-radius: 100px;
     background: var(--color-ink);
-    color: white;
+    color: var(--color-white);
     font-size: 13px;
     font-weight: 600;
     line-height: 1;
@@ -224,8 +225,8 @@
 .inline-link { transition: text-decoration-color 160ms ease, color 160ms ease; }
 .form-label > span { transition: color 160ms ease; }
 .form-label:focus-within > span { color: var(--focus-color); }
-.form-label :is(input, textarea, select):focus { background: #fff9f5; border-color: var(--focus-color); }
-.form-label :is(input, textarea, select):user-invalid { border-color: var(--color-error); background: #fff7f5; }
+.form-label :is(input, textarea, select):focus { background: var(--color-focus-surface); border-color: var(--focus-color); }
+.form-label :is(input, textarea, select):user-invalid { border-color: var(--color-error); background: var(--color-error-surface); }
 form[aria-busy='true'] button[type='submit'] > svg { visibility: hidden; }
 form[aria-busy='true'] button[type='submit']::after {
   content: ''; position: absolute; right: 23px; top: calc(50% - 7px);
@@ -239,7 +240,7 @@ form[aria-busy='true'] button[type='submit']::after {
 .gallery-buttons button:focus-visible, .gallery-buttons button:focus-visible > svg { transition: none; }
 @media (hover: hover) and (pointer: fine) {
   .inline-link:hover { color: var(--focus-color); text-decoration-color: var(--color-accent); }
-  .gallery-buttons button:hover:not(:disabled) { background: var(--color-accent); color: var(--color-ink); }
+  .gallery-buttons button:hover:not(:disabled) { background: var(--color-accent); color: var(--color-accent-ink); }
   .gallery-buttons button:first-child:hover:not(:disabled) > svg { transform: rotate(180deg) translateX(3px); }
   .gallery-buttons button:last-child:hover:not(:disabled) > svg { transform: translateX(3px); }
 }
