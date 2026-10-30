@@ -105,6 +105,7 @@
   summary::-webkit-details-marker { display: none; }
 }
 .adot-mark { filter: brightness(0) invert(1); }
+.brand { gap: 3px; }
 .hero-location { font-size: 15px; font-weight: 650; }
 .hero-reviews p { margin-top: 4px; }
 .hero-clients { display: flex; align-items: center; gap: 14px; flex-shrink: 0; padding-top: 10px; }

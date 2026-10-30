@@ -23,7 +23,7 @@ export function pageSchema(path: string, title: string, description: string, ima
     '@graph': [
       {
         '@type': 'LocalBusiness', '@id': organizationId, name: site.name, alternateName: 'Adot', url: canonicalUrl('/'),
-        description: site.description, logo: new URL('/images/adot-logo.png', site.url).href,
+        description: site.description, logo: new URL('/images/adot-logo.png?v=2', site.url).href,
         image, email: site.email, telephone: site.phoneHref, address: site.postalAddress,
         areaServed: { '@type': 'Continent', name: 'Africa' },
         openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], opens: site.hours.opens, closes: site.hours.closes }],
